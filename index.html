@@ -1,1 +1,19 @@
-hello world
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>set .vimrc</p>
+
+<input id="vimrc" type="text" value="curl -sL https://raw.githubusercontent.com/eubnara/linuxEnvironmentSetting/master/initialize_vim.sh | bash">
+<button onclick="copy()">Copy text</button>
+
+<script>
+function copy() {
+  var copyText = document.getElementById("vimrc");
+  copyText.select();
+  document.execCommand("Copy");
+}
+</script>
+
+</body>
+</html>
