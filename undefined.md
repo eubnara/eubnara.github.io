@@ -1,23 +1,6 @@
 # 소개
 
-## Getting Super Powers
+Kerberos 프로토콜은 개방되어 있고 안전하지 않은 네트워크 상에서도 신뢰할 수 있는 인증을 제공하기 위해 고안되었습니다. 이 네트워크에 속한 여러 호스트들 사이에서 오간 메시지들은 탈취될 수 있음을 가정하고 있습니다. 하지만, Kerberos 는 사용되는 컴퓨터들 자체가 취약한 상황에서는 어떠한 것도 보장하지 않습니다. 즉, 인증 서버, 애플리케이션 서버\(imap, pop, smtp, telnet, ftp, ssh, AFS, Ipr, ...\) 그리고 클라이언트들은 항상 최신성을 유지하여 요청하는 사용자와 서비스 제공자들의 진위성이 보장되어야 합니다.
 
-Becoming a super hero is a fairly straight forward process:
-
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-```
-// Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-
-
+위 내용은 한 문장으로 표현하면 다음과 같습니다.: **"Kerberos 는 신뢰할 수 없는 네트워크 상황에서 믿을 만한 호스트 간의 인증 프로토콜이다."** 예를 하나 들어 이 개념을 다시 설명해 보겠습니다. Kerberos 의 전략은 누군가가 서버에 접근 권한을 얻어서 비밀키가 포함된 파일을 복사할 수 있다면 아무짝에도 쓸모가 없습니다. 정말로, 침입자가 이 키를 다른 장비에 두고, 간단한 거짓 DNS 혹은 IP 를 얻기만 한다면 인증 서버에게 실제 사용자인 척 할 수 있습니다.
 
