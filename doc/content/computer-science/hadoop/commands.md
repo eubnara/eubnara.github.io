@@ -1,7 +1,7 @@
 ---
-title: "Commands"
+title: "Hadoop commands"
 date: 2023-02-05T17:02:26+09:00
-tags: []
+tags: ["hadoop"]
 categories: ["troubleshooting", "knowledge"]
 ShowToc: true
 ShowBreadCrumbs: true
