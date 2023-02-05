@@ -5,6 +5,15 @@ theme: 'PaperMod'
 
 menu:
   main:
+    - name: About
+      url: about
+      weight: 5
+    - name: Archive
+      url: archives
+      weight: 5
+    - name: Search
+      url: search/
+      weight: 10
     - identifier: categories
       name: categories
       url: /categories/
@@ -18,3 +27,8 @@ menu:
 #       url: https://example.org
 #       weight: 30
 
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
