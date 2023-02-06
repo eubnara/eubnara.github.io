@@ -7,6 +7,7 @@ My name is Yubi Lee.\
 I work as a Data Engineer.
 
 
+- email: eubnara@gmail.com
 - github: https://github.com/eubnara
 - linkedin: https://kr.linkedin.com/in/yubi-lee-40a158130
 
@@ -84,3 +85,16 @@ I work as a Data Engineer.
   - elasticsearch plugin to discovery hosts in cluster based on information in znode of Zookeeper
 - winstonjs
   - [https://github.com/winstonjs/winston/pull/1559](https://github.com/winstonjs/winston/pull/1559): fix confusing log message
+
+---
+
+# Presentation
+
+- NAVER DEVIEW 2017: Advanced Experiences in Multi-tenant Hadoop Cluster Operation
+  - https://deview.kr/2017/schedule/193?lang=en
+  - https://www.slideshare.net/deview/234-80881396
+  - https://tv.naver.com/v/2297124
+- NAVER DEVIEW 2021: Large scale multi-tenant secure Hadoop cluster growth experience sharing
+  - https://deview.kr/2021/sessions/459
+  - https://deview.kr/data/deview/session/attach/10_%EC%B4%88%EB%8C%80%EC%9A%A9%EB%9F%89%20%EB%A9%80%ED%8B%B0%ED%85%8C%EB%84%8C%ED%8A%B8%20%EC%8B%9C%ED%81%90%EC%96%B4%20%ED%95%98%EB%91%A1%20%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%20%EC%84%B1%EC%9E%A5%ED%86%B5%20%EA%B2%BD%ED%97%98%EA%B8%B0.pdf
+  - https://tv.naver.com/v/23650574
