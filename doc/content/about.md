@@ -34,6 +34,7 @@ I work as a Data Engineer.
 
 ## Apache Ambari
 
+- [AMBARI-25891](https://issues.apache.org/jira/browse/AMBARI-25891): Enhancements when regenerating keytabs and changing Kerberos configurations
 - [AMBARI-25797](https://issues.apache.org/jira/browse/AMBARI-25797): Fail to add a component on the same machine with ambari-server of a new service with no kerberos identity when kerberos enabled
 - [AMBARI-25788](https://issues.apache.org/jira/browse/AMBARI-25788): Ambari server keeps generating keytabs even with KerberosServerAction#OperationType.CREATE_MISSING option.
 - AMBARI-25624: optimize creating kerberos keytab
