@@ -18,6 +18,7 @@ I work as a Data Engineer.
 
 ## Hadoop
 
+- [HADOOP-18666](https://issues.apache.org/jira/browse/HADOOP-18666): A whitelist of endpoints to skip Kerberos authentication doesn't work for ResourceManager and Job History Server
 - [HDFS-16883](https://issues.apache.org/jira/browse/HDFS-16883): fix duplicate field name in hdfs-default.xml
 - [HADOOP-18585](https://issues.apache.org/jira/browse/HADOOP-18585): DataNode's internal infoserver redirects with http scheme, not https when https enabled.
 - [HADOOP-18398](https://issues.apache.org/jira/browse/HADOOP-18398): Prevent AvroRecord*.class from being included non-test jar
