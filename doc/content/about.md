@@ -69,6 +69,10 @@ I work as a Data Engineer.
 - [https://github.com/cloudera/hue/pull/1134](https://github.com/cloudera/hue/pull/1134) (not merged): fix bug in handling `+` character in filebrowser
 - [https://github.com/cloudera/hue/pull/1135](https://github.com/cloudera/hue/pull/1135): fix bug in substituting `liboozie.remote_deployement_dir` variable
 
+## Apache Zeppelin
+
+- [ZEPPELIN-5594](https://issues.apache.org/jira/browse/ZEPPELIN-5594): HDFS file id should be read as "long", not "int".
+
 
 ## ETC
 
