@@ -50,6 +50,7 @@ I work as a Data Engineer.
 
 ## Apache Ranger
 
+- [RANGER-4236](https://issues.apache.org/jira/browse/RANGER-4236): enhance Ranger JSON audit to HDFS by compressing as gzip
 - [RANGER-4068](https://issues.apache.org/jira/browse/RANGER-4068): fix error caused by missing dnsjava library
 - [RANGER-3924](https://issues.apache.org/jira/browse/RANGER-3924): fix unnecessary sync caused by incremeting timestamp value typo
 - [RANGER-3858](https://issues.apache.org/jira/browse/RANGER-3858): On dev-support, service creation and ranger-kafka-plugin setup are failed
