@@ -67,3 +67,7 @@ Set the configuration above in `hbase-site.xml`.
 ![hbase_reversedns](images/computer-science/hadoop/hbase_reversedns.png)
 
 
+# References
+
+- https://deview.kr/data/deview/session/attach/1500_T3_이영곤_대용량_멀티테넌트_시큐어_하둡_클러스터_운영_경험기.pdf
+
