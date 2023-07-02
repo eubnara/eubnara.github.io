@@ -64,7 +64,7 @@ Set the configuration above in `hbase-site.xml`.
 - https://github.com/apache/hbase/blob/25455b6fe3cbd8f093fd9bc8c51a1bab95353a62/hbase-client/src/main/java/org/apache/hadoop/hbase/security/provider/GssSaslClientAuthenticationProvider.java#L48
 - https://hbase.apache.org/book.html#hbase_default_configurations
 
-![hbase_reversedns](images/computer-science/hadoop/hbase_reversedns.png)
+![hbase_reversedns](/images/computer-science/hadoop/hbase_reversedns.png)
 
 
 # References
