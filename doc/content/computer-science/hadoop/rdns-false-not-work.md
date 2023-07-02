@@ -9,9 +9,9 @@ ShowBreadCrumbs: true
 
 https://web.mit.edu/kerberos/krb5-1.13/doc/admin/princ_dns.html
 
-```
-Operating system bugs may prevent a setting of rdns = false from disabling reverse DNS lookup. Some versions of GNU libc have a bug in getaddrinfo() that cause them to look up PTR records even when not required. MIT Kerberos releases krb5-1.10.2 and newer have a workaround for this problem, as does the krb5-1.9.x series as of release krb5-1.9.4.
-```
+
+> Operating system bugs may prevent a setting of rdns = false from disabling reverse DNS lookup. Some versions of GNU libc have a bug in getaddrinfo() that cause them to look up PTR records even when not required. MIT Kerberos releases krb5-1.10.2 and newer have a workaround for this problem, as does the krb5-1.9.x series as of release krb5-1.9.4.
+
 
 There are some cases where "rdns = false" in krb5.conf is not respected in Hadoop ecosystem. You can try to modify `/etc/hosts` or register PTR records to fix this kind of issues.
 
