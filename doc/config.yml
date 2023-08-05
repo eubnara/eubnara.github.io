@@ -2,6 +2,10 @@ baseURL: 'https://eubnara.github.io/'
 languageCode: 'en-us'
 title: "EUB's second brain"
 theme: 'PaperMod'
+disqusShortname: eubnara
+
+params:
+  comments: true
 
 menu:
   main:
