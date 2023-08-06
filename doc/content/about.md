@@ -1,6 +1,7 @@
 ---
 title: "About me"
 ShowToc: true
+comments: false
 ---
 
 My name is Yubi Lee.\

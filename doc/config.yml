@@ -3,6 +3,9 @@ languageCode: 'en-us'
 title: "EUB's second brain"
 theme: 'PaperMod'
 
+params:
+  comments: true
+
 menu:
   main:
     - name: About
