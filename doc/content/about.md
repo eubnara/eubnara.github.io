@@ -60,7 +60,7 @@ I work as a Data Engineer.
 
 ## Apache Spark
 
-- [SPARK-44976](https://issues.apache.org/jira/browse/SPARK-44976): (TBD) Utils.getCurrentUserName should return the full principal name
+- [SPARK-44976](https://issues.apache.org/jira/browse/SPARK-44976): Utils.getCurrentUserName should return the full principal name
 - [SPARK-40964](https://issues.apache.org/jira/browse/SPARK-40964): (TBD) Cannot run spark history server with shaded hadoop jar
 - [SPARK-40072](https://issues.apache.org/jira/browse/SPARK-40072): fix build failure when using `make-distributions.sh`
 
