@@ -52,6 +52,7 @@ I work as a Data Engineer.
 
 ## Apache Ranger
 
+- [RANGER-4418](https://issues.apache.org/jira/browse/RANGER-4418): Upgrade hadoop version and use shaded hadoop client artifacts
 - [RANGER-4247](https://issues.apache.org/jira/browse/RANGER-4247): auditPolicyEvaluators should be set before logging it
 - [RANGER-4236](https://issues.apache.org/jira/browse/RANGER-4236): enhance Ranger JSON audit to HDFS by compressing as gzip
 - [RANGER-4068](https://issues.apache.org/jira/browse/RANGER-4068): fix error caused by missing dnsjava library
