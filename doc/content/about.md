@@ -80,6 +80,10 @@ I work as a Data Engineer.
 - [ZEPPELIN-5594](https://issues.apache.org/jira/browse/ZEPPELIN-5594): HDFS file id should be read as "long", not "int".
 
 
+## Apache Avro
+
+- [AVRO-3877](https://issues.apache.org/jira/browse/AVRO-3877): [doc] fix wrong configuration for avro-maven-plugin in java example
+
 ## ETC
 
 - Spring-shell
