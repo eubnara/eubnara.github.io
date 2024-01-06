@@ -30,6 +30,10 @@ I work as a Data Engineer.
 - [HDFS-13259](https://issues.apache.org/jira/browse/HDFS-13259): fix file preview bug in NameNode UI
 - [HDFS-13260](https://issues.apache.org/jira/browse/HDFS-13260): fix guide about HA with QJM
 
+## Apache HBase
+
+- [HBASE-28294](https://issues.apache.org/jira/browse/HBASE-28294): Support to skip Kerberos authentication for metric endpoints
+
 ## Apache Bigtop
 
 - [BIGTOP-3906](https://issues.apache.org/jira/browse/BIGTOP-3906): Wrapper script for hive sources wrong default file
