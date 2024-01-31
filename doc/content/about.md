@@ -74,6 +74,10 @@ I work as a Data Engineer.
 - [IMPALA-10408](https://issues.apache.org/jira/browse/IMPALA-10408): Support Apache components to build Apache Impala to reduce dependencies of CDH or CDP
   - https://gerrit.cloudera.org/#/c/18977/
 
+## Apache KUDU
+
+- [https://issues.apache.org/jira/browse/KUDU-3549](https://issues.apache.org/jira/browse/KUDU-3549): String gauge exposed in prometheus format
+
 ## Cloudera HUE
 
 - [https://github.com/cloudera/hue/pull/1134](https://github.com/cloudera/hue/pull/1134) (not merged): fix bug in handling `+` character in filebrowser
