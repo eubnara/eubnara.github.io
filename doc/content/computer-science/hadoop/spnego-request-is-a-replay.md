@@ -9,7 +9,7 @@ ShowBreadCrumbs: true
 
 
 
-- 참고
+- references
     - [https://docs.cloudera.com/cloudera-manager/7.5.5/security-troubleshooting/cm-security-troubleshooting.pdf](https://docs.cloudera.com/cloudera-manager/7.5.5/security-troubleshooting/cm-security-troubleshooting.pdf)
     - [https://search-guard.com/elasticsearch-kibana-kerberos/](https://search-guard.com/elasticsearch-kibana-kerberos/)
 
