@@ -26,4 +26,4 @@ In order to avoid this errors. Some metrics should be monitored on zookeeper.
     - `proposal_size` is a proposal size in bytes from zookeeper server leader to follower.
     - `proposal`?: refer to https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html.
 
-These values should be lower than `jute.maxbuffer`.
+These values should be lower than `jute.maxbuffer`. This setting can be set through jvm argument like `-Djute.maxbuffer=10485760` (10mb).
