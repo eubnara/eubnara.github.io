@@ -74,6 +74,8 @@ I work as a Data Engineer.
 
 ## Apache Impala
 
+- [IMPALA-13311](https://issues.apache.org/jira/browse/IMPALA-13311): Hive3 INSERT failed by ClassNotFoundException: org.apache.tez.runtime.api.Event
+  - https://gerrit.cloudera.org/#/c/21706/
 - [IMPALA-13023](https://issues.apache.org/jira/browse/IMPALA-13023): support webserver ldap filter when using spnego
   - https://gerrit.cloudera.org/#/c/21339/
 - [IMPALA-10408](https://issues.apache.org/jira/browse/IMPALA-10408): Support Apache components to build Apache Impala to reduce dependencies of CDH or CDP
