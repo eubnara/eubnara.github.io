@@ -32,6 +32,7 @@ I work as a Data Engineer.
 
 ## Apache HBase
 
+- [HBASE-28816](https://issues.apache.org/jira/browse/HBASE-28816): The description of "hbase.superuser" is confusing
 - [HBASE-28294](https://issues.apache.org/jira/browse/HBASE-28294): Support to skip Kerberos authentication for metric endpoints
 
 ## Apache Bigtop
