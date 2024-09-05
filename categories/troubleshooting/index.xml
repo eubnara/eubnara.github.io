@@ -1,11 +1,56 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Troubleshooting on EUB's second brain</title><link>https://eubnara.github.io/categories/troubleshooting/</link><description>Recent content in Troubleshooting on EUB's second brain</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 25 May 2024 22:34:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/categories/troubleshooting/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoring metrics related to "jute.maxbuffer"</title><link>https://eubnara.github.io/computer-science/hadoop/monitoring-jute.maxbuffer/</link><pubDate>Sat, 25 May 2024 22:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/monitoring-jute.maxbuffer/</guid><description>There is a configuration named as &amp;ldquo;jute.maxbuffer&amp;rdquo; when using zookeeper. This can be set on zookeeper client side or server side. On zookeeper client side, the setting should be lower than that on zookeeper server. If a client gets data bigger than the setting, it will get an error.
-There are some related issue.
-https://issues.apache.org/jira/browse/HIVE-21993 https://issues.apache.org/jira/browse/YARN-2962 In order to avoid this errors. Some metrics should be monitored on zookeeper.
-last_client_response_size or max_client_response_size client_response_size is a response size in bytes from zookeeper server to client.</description></item><item><title>Checklist for hive metastore when using mysql</title><link>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</link><pubDate>Thu, 12 Oct 2023 08:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</guid><description>MySQL Index There are some expensive operations for hive metastore when accessing or storing metadatas on RDBMS.
-Here are some official hive patches for indexing.
--- HIVE-21063 CREATE UNIQUE INDEX `NOTIFICATION_LOG_EVENT_ID` ON NOTIFICATION_LOG (`EVENT_ID`) USING BTREE; -- HIVE-21487 CREATE INDEX COMPLETED_COMPACTIONS_RES ON COMPLETED_COMPACTIONS (CC_DATABASE,CC_TABLE,CC_PARTITION); -- HIVE-27165 DROP INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS; CREATE INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS (DB_NAME, TABLE_NAME, COLUMN_NAME, CAT_NAME) USING BTREE; DROP INDEX PCS_STATS_IDX ON PART_COL_STATS; CREATE INDEX PCS_STATS_IDX ON PART_COL_STATS (DB_NAME,TABLE_NAME,COLUMN_NAME,PARTITION_NAME,CAT_NAME) USING BTREE; When you upgrade your hive, there are some changes on tables in rdbms.</description></item><item><title>Some cases where "rdns = false" in krb5.conf does not work in Hadoop ecosystem</title><link>https://eubnara.github.io/computer-science/hadoop/rdns-false-not-work/</link><pubDate>Sun, 02 Jul 2023 18:48:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/rdns-false-not-work/</guid><description>https://web.mit.edu/kerberos/krb5-1.13/doc/admin/princ_dns.html
-Operating system bugs may prevent a setting of rdns = false from disabling reverse DNS lookup. Some versions of GNU libc have a bug in getaddrinfo() that cause them to look up PTR records even when not required. MIT Kerberos releases krb5-1.10.2 and newer have a workaround for this problem, as does the krb5-1.9.x series as of release krb5-1.9.4.
-There are some cases where &amp;ldquo;rdns = false&amp;rdquo; in krb5.conf is not respected in Hadoop ecosystem.</description></item><item><title>Hadoop commands</title><link>https://eubnara.github.io/computer-science/hadoop/commands/</link><pubDate>Sun, 05 Feb 2023 17:02:26 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/commands/</guid><description>HDFS Reconfigure without restart https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html
-configurable keys are limited without restart $ hdfs dfsadmin -reconfig namenode nn1.example.com:8020 properties Node [nn1.example.com:8020] Reconfigurable properties: dfs.block.placement.ec.classname dfs.block.replicator.classname dfs.heartbeat.interval dfs.image.parallel.load dfs.namenode.avoid.read.slow.datanode dfs.namenode.block-placement-policy.exclude-slow-nodes.enabled dfs.namenode.heartbeat.recheck-interval dfs.namenode.max.slowpeer.collect.nodes dfs.namenode.replication.max-streams dfs.namenode.replication.max-streams-hard-limit dfs.namenode.replication.work.multiplier.per.iteration dfs.storage.policy.satisfier.mode fs.protected.directories hadoop.caller.context.enabled ipc.8020.backoff.enable</description></item><item><title>SPNEGO-enabled Hadoop DataNode misjudges kerberos "replay attack".</title><link>https://eubnara.github.io/computer-science/hadoop/spnego-request-is-a-replay/</link><pubDate>Sun, 05 Feb 2023 16:01:17 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/spnego-request-is-a-replay/</guid><description> references https://docs.cloudera.com/cloudera-manager/7.5.5/security-troubleshooting/cm-security-troubleshooting.pdf https://search-guard.com/elasticsearch-kibana-kerberos/ I guess that this is caused by sharing the same kerberos keytab (/etc/security/keytabs/spnego.service.keytab) and principal(HTTP/_HOST@{REALM}) among Hadoop daemons (NameNode, DataNode, JournalNodes, ResourceManager, NodeManager &amp;hellip;). I assume that DataNode misjudges it is a replay attack in certain circumstances.
-Adding the following jvm system properties to Hadoop daemons will fix this issue as a workaround. It means java process will not use replay cache.
--Dsun.security.krb5.rcache=none</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Troubleshooting on EUB's second brain</title><link>https://eubnara.github.io/categories/troubleshooting/</link><description>Recent content in Troubleshooting on EUB's second brain</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 25 May 2024 22:34:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/categories/troubleshooting/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoring metrics related to "jute.maxbuffer"</title><link>https://eubnara.github.io/computer-science/hadoop/monitoring-jute.maxbuffer/</link><pubDate>Sat, 25 May 2024 22:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/monitoring-jute.maxbuffer/</guid><description>&lt;p>There is a configuration named as &amp;ldquo;jute.maxbuffer&amp;rdquo; when using zookeeper. This can be set on zookeeper client side or server side. On zookeeper client side, the setting should be lower than that on zookeeper server.
+If a client gets data bigger than the setting, it will get an error.&lt;/p>
+&lt;p>There are some related issue.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HIVE-21993">https://issues.apache.org/jira/browse/HIVE-21993&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://issues.apache.org/jira/browse/YARN-2962">https://issues.apache.org/jira/browse/YARN-2962&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>In order to avoid this errors. Some metrics should be monitored on zookeeper.&lt;/p></description></item><item><title>Checklist for hive metastore when using mysql</title><link>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</link><pubDate>Thu, 12 Oct 2023 08:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</guid><description>&lt;h1 id="mysql-index">MySQL Index&lt;/h1>
+&lt;p>There are some expensive operations for hive metastore when accessing or storing metadatas on RDBMS.&lt;br>
+Here are some official hive patches for indexing.&lt;/p>
+&lt;pre tabindex="0">&lt;code>-- HIVE-21063
+CREATE UNIQUE INDEX `NOTIFICATION_LOG_EVENT_ID` ON NOTIFICATION_LOG (`EVENT_ID`) USING BTREE;
+-- HIVE-21487
+CREATE INDEX COMPLETED_COMPACTIONS_RES ON COMPLETED_COMPACTIONS (CC_DATABASE,CC_TABLE,CC_PARTITION);
+-- HIVE-27165
+DROP INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS;
+CREATE INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS (DB_NAME, TABLE_NAME, COLUMN_NAME, CAT_NAME) USING BTREE;
+DROP INDEX PCS_STATS_IDX ON PART_COL_STATS;
+CREATE INDEX PCS_STATS_IDX ON PART_COL_STATS (DB_NAME,TABLE_NAME,COLUMN_NAME,PARTITION_NAME,CAT_NAME) USING BTREE;
+&lt;/code>&lt;/pr</description></item><item><title>Some cases where "rdns = false" in krb5.conf does not work in Hadoop ecosystem</title><link>https://eubnara.github.io/computer-science/hadoop/rdns-false-not-work/</link><pubDate>Sun, 02 Jul 2023 18:48:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/rdns-false-not-work/</guid><description>&lt;p>&lt;a href="https://web.mit.edu/kerberos/krb5-1.13/doc/admin/princ_dns.html">https://web.mit.edu/kerberos/krb5-1.13/doc/admin/princ_dns.html&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>Operating system bugs may prevent a setting of rdns = false from disabling reverse DNS lookup. Some versions of GNU libc have a bug in getaddrinfo() that cause them to look up PTR records even when not required. MIT Kerberos releases krb5-1.10.2 and newer have a workaround for this problem, as does the krb5-1.9.x series as of release krb5-1.9.4.&lt;/p>
+&lt;/blockquote>
+&lt;p>There are some cases where &amp;ldquo;rdns = false&amp;rdquo; in krb5.conf is not respected in Hadoop ecosystem. You can try to modify &lt;code>/etc/hosts&lt;/code> or register PTR records to fix this kind of issues.&lt;/p></description></item><item><title>Hadoop commands</title><link>https://eubnara.github.io/computer-science/hadoop/commands/</link><pubDate>Sun, 05 Feb 2023 17:02:26 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/commands/</guid><description>&lt;h1 id="hdfs">HDFS&lt;/h1>
+&lt;h2 id="reconfigure-without-restart">Reconfigure without restart&lt;/h2>
+&lt;p>&lt;a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html">https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>configurable keys are limited without restart&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>$ hdfs dfsadmin -reconfig namenode nn1.example.com:8020 properties
+Node [nn1.example.com:8020] Reconfigurable properties:
+dfs.block.placement.ec.classname
+dfs.block.replicator.classname
+dfs.heartbeat.interval
+dfs.image.parallel.load
+dfs.namenode.avoid.read.slow.datanode
+dfs.namenode.block-placement-policy.exclude-slow-nodes.enabled
+dfs.namenode.heartbeat.recheck-interval
+dfs.namenode.max.slowpeer.collect.nodes
+dfs.namenode.replication.max-streams
+dfs.namenode.replication.max-streams-hard-limit
+dfs.namenode.replication.work.multiplier.per.iteration
+dfs.storage.policy.satisfier.mode
+fs.protected.directories
+hadoop.caller.context.enabled
+ipc.8020.backoff.enable
+&lt;/code>&lt;/pre></description></item><item><title>SPNEGO-enabled Hadoop DataNode misjudges kerberos "replay attack".</title><link>https://eubnara.github.io/computer-science/hadoop/spnego-request-is-a-replay/</link><pubDate>Sun, 05 Feb 2023 16:01:17 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/spnego-request-is-a-replay/</guid><description>&lt;ul>
+&lt;li>references
+&lt;ul>
+&lt;li>&lt;a href="https://docs.cloudera.com/cloudera-manager/7.5.5/security-troubleshooting/cm-security-troubleshooting.pdf">https://docs.cloudera.com/cloudera-manager/7.5.5/security-troubleshooting/cm-security-troubleshooting.pdf&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://search-guard.com/elasticsearch-kibana-kerberos/">https://search-guard.com/elasticsearch-kibana-kerberos/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>I guess that this is caused by sharing the same kerberos keytab (&lt;code>/etc/security/keytabs/spnego.service.keytab&lt;/code>) and principal(&lt;code>HTTP/_HOST@{REALM}&lt;/code>) among Hadoop daemons (NameNode, DataNode, JournalNodes, ResourceManager, NodeManager &amp;hellip;). I assume that DataNode misjudges it is a replay attack in certain circumstances.&lt;/p>
+&lt;p>Adding the following jvm system properties to Hadoop daemons will fix this issue as a workaround. It means java process will not use replay cache.&lt;/p></description></item></channel></rss>
