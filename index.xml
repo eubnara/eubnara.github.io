@@ -5,7 +5,21 @@ If a client gets data bigger than the setting, it will get an error.&lt;/p>
 &lt;li>&lt;a href="https://issues.apache.org/jira/browse/HIVE-21993">https://issues.apache.org/jira/browse/HIVE-21993&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://issues.apache.org/jira/browse/YARN-2962">https://issues.apache.org/jira/browse/YARN-2962&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>In order to avoid this errors. Some metrics should be monitored on zookeeper.&lt;/p></description></item><item><title>Checklist for hive metastore when using mysql</title><link>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</link><pubDate>Thu, 12 Oct 2023 08:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</guid><description>&lt;h1 id="mysql-index">MySQL Index&lt;/h1>
+&lt;p>In order to avoid this errors. Some metrics should be monitored on zookeeper.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>last_client_response_size&lt;/code> or &lt;code>max_client_response_size&lt;/code>
+&lt;ul>
+&lt;li>&lt;code>client_response_size&lt;/code> is a response size in bytes from zookeeper server to client.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>last_proposal_size&lt;/code> or &lt;code>max_proposal_size&lt;/code>
+&lt;ul>
+&lt;li>&lt;code>proposal_size&lt;/code> is a proposal size in bytes from zookeeper server leader to follower.&lt;/li>
+&lt;li>&lt;code>proposal&lt;/code>?: refer to &lt;a href="https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html">https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>These values should be lower than &lt;code>jute.maxbuffer&lt;/code>. This setting can be set through jvm argument like &lt;code>-Djute.maxbuffer=10485760&lt;/code> (10mb).&lt;/p></description></item><item><title>Checklist for hive metastore when using mysql</title><link>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</link><pubDate>Thu, 12 Oct 2023 08:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</guid><description>&lt;h1 id="mysql-index">MySQL Index&lt;/h1>
 &lt;p>There are some expensive operations for hive metastore when accessing or storing metadatas on RDBMS.&lt;br>
 Here are some official hive patches for indexing.&lt;/p>
 &lt;pre tabindex="0">&lt;code>-- HIVE-21063
@@ -17,7 +31,7 @@ DROP INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS;
 CREATE INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS (DB_NAME, TABLE_NAME, COLUMN_NAME, CAT_NAME) USING BTREE;
 DROP INDEX PCS_STATS_IDX ON PART_COL_STATS;
 CREATE INDEX PCS_STATS_IDX ON PART_COL_STATS (DB_NAME,TABLE_NAME,COLUMN_NAME,PARTITION_NAME,CAT_NAME) USING BTREE;
-&lt;/code>&lt;/pr</description></item><item><title>Some cases where "rdns = false" in krb5.conf does not work in Hadoop ecosystem</title><link>https://eubnara.github.io/computer-science/hadoop/rdns-false-not-work/</link><pubDate>Sun, 02 Jul 2023 18:48:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/rdns-false-not-work/</guid><description>&lt;p>&lt;a href="https://web.mit.edu/kerberos/krb5-1.13/doc/admin/princ_dns.html">https://web.mit.edu/kerberos/krb5-1.13/doc/admin/princ_dns.html&lt;/a>&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>When you upgrade your hive, there are some changes on tables in rdbms. You can find needed SQLs depending on version at &lt;a href="https://github.com/apache/hive/tree/master/standalone-metastore/metastore-server/src/main/sql/mysql">https://github.com/apache/hive/tree/master/standalone-metastore/metastore-server/src/main/sql/mysql&lt;/a>.&lt;/p></description></item><item><title>Some cases where "rdns = false" in krb5.conf does not work in Hadoop ecosystem</title><link>https://eubnara.github.io/computer-science/hadoop/rdns-false-not-work/</link><pubDate>Sun, 02 Jul 2023 18:48:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/rdns-false-not-work/</guid><description>&lt;p>&lt;a href="https://web.mit.edu/kerberos/krb5-1.13/doc/admin/princ_dns.html">https://web.mit.edu/kerberos/krb5-1.13/doc/admin/princ_dns.html&lt;/a>&lt;/p>
 &lt;blockquote>
 &lt;p>Operating system bugs may prevent a setting of rdns = false from disabling reverse DNS lookup. Some versions of GNU libc have a bug in getaddrinfo() that cause them to look up PTR records even when not required. MIT Kerberos releases krb5-1.10.2 and newer have a workaround for this problem, as does the krb5-1.9.x series as of release krb5-1.9.4.&lt;/p>
 &lt;/blockquote>
@@ -50,7 +64,8 @@ ipc.8020.backoff.enable
 &lt;p>In Hadoop ecosystem, &lt;code>HADOOP_CLASSPATH&lt;/code> environment variable is commonly used in many places. &lt;code>Hive&lt;/code> is use this variable, too.
 I wonder that how the &lt;code>HADOOP_CLASSPATH&lt;/code> variable is used in a script like &lt;code>beeline&lt;/code>. I cannot find &lt;code>HADOOP_CLASSPATH&lt;/code> variable in &lt;code>Hive&lt;/code> source codes.
 I finally figure out that when executing &lt;code>beeline&lt;/code> it uses &lt;code>hadoop jar&lt;/code> command. (&lt;a href="https://github.com/apache/hive/blob/rel/release-3.1.3/bin/ext/beeline.sh#L35">https://github.com/apache/hive/blob/rel/release-3.1.3/bin/ext/beeline.sh#L35&lt;/a>)
-It uses &lt;code>RunJar.java&lt;/code> where &lt;code>HADOOP_CLASSPATH&lt;/code> is used to set &lt;code>CLASSPATH&lt;/code>. (&lt;a href="https://github.com/apache/hadoop/blob/rel/release-3.3.4/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/RunJar.java#L347-L351">https://github.com/apache/hadoop/blob/rel/release-3.3.4/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/RunJar.java#L347-L351&lt;/a>)&lt;/p></description></item><item><title>SPNEGO-enabled Hadoop DataNode misjudges kerberos "replay attack".</title><link>https://eubnara.github.io/computer-science/hadoop/spnego-request-is-a-replay/</link><pubDate>Sun, 05 Feb 2023 16:01:17 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/spnego-request-is-a-replay/</guid><description>&lt;ul>
+It uses &lt;code>RunJar.java&lt;/code> where &lt;code>HADOOP_CLASSPATH&lt;/code> is used to set &lt;code>CLASSPATH&lt;/code>. (&lt;a href="https://github.com/apache/hadoop/blob/rel/release-3.3.4/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/RunJar.java#L347-L351">https://github.com/apache/hadoop/blob/rel/release-3.3.4/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/RunJar.java#L347-L351&lt;/a>)&lt;/p>
+&lt;p>If something in Hadoop ecosystem uses &lt;code>RunJar#main&lt;/code>, it probably repect &lt;code>HADOOP_CLASSPATH&lt;/code> environment variable.&lt;/p></description></item><item><title>SPNEGO-enabled Hadoop DataNode misjudges kerberos "replay attack".</title><link>https://eubnara.github.io/computer-science/hadoop/spnego-request-is-a-replay/</link><pubDate>Sun, 05 Feb 2023 16:01:17 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/spnego-request-is-a-replay/</guid><description>&lt;ul>
 &lt;li>references
 &lt;ul>
 &lt;li>&lt;a href="https://docs.cloudera.com/cloudera-manager/7.5.5/security-troubleshooting/cm-security-troubleshooting.pdf">https://docs.cloudera.com/cloudera-manager/7.5.5/security-troubleshooting/cm-security-troubleshooting.pdf&lt;/a>&lt;/li>
@@ -59,7 +74,9 @@ It uses &lt;code>RunJar.java&lt;/code> where &lt;code>HADOOP_CLASSPATH&lt;/code>
 &lt;/li>
 &lt;/ul>
 &lt;p>I guess that this is caused by sharing the same kerberos keytab (&lt;code>/etc/security/keytabs/spnego.service.keytab&lt;/code>) and principal(&lt;code>HTTP/_HOST@{REALM}&lt;/code>) among Hadoop daemons (NameNode, DataNode, JournalNodes, ResourceManager, NodeManager &amp;hellip;). I assume that DataNode misjudges it is a replay attack in certain circumstances.&lt;/p>
-&lt;p>Adding the following jvm system properties to Hadoop daemons will fix this issue as a workaround. It means java process will not use replay cache.&lt;/p></description></item><item><title>About me</title><link>https://eubnara.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eubnara.github.io/about/</guid><description>&lt;p>My name is Yubi Lee.&lt;br>
+&lt;p>Adding the following jvm system properties to Hadoop daemons will fix this issue as a workaround. It means java process will not use replay cache.&lt;/p>
+&lt;pre tabindex="0">&lt;code>-Dsun.security.krb5.rcache=none
+&lt;/code>&lt;/pre></description></item><item><title>About me</title><link>https://eubnara.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eubnara.github.io/about/</guid><description>&lt;p>My name is Yubi Lee.&lt;br>
 I work as a Data Engineer.&lt;/p>
 &lt;ul>
 &lt;li>email: &lt;a href="mailto:eubnara@gmail.com">eubnara@gmail.com&lt;/a>&lt;/li>
@@ -86,6 +103,7 @@ I work as a Data Engineer.&lt;/p>
 &lt;/ul>
 &lt;h2 id="apache-hbase">Apache HBase&lt;/h2>
 &lt;ul>
+&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HBASE-28911">HBASE-28911&lt;/a>: Automatic SSL keystore reloading for HttpServer&lt;/li>
 &lt;li>&lt;a href="https://issues.apache.org/jira/browse/HBASE-28816">HBASE-28816&lt;/a>: The description of &amp;ldquo;hbase.superuser&amp;rdquo; is confusing&lt;/li>
 &lt;li>&lt;a href="https://issues.apache.org/jira/browse/HBASE-28294">HBASE-28294&lt;/a>: Support to skip Kerberos authentication for metric endpoints&lt;/li>
 &lt;/ul>

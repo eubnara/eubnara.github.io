@@ -10,4 +10,4 @@ DROP INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS;
 CREATE INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS (DB_NAME, TABLE_NAME, COLUMN_NAME, CAT_NAME) USING BTREE;
 DROP INDEX PCS_STATS_IDX ON PART_COL_STATS;
 CREATE INDEX PCS_STATS_IDX ON PART_COL_STATS (DB_NAME,TABLE_NAME,COLUMN_NAME,PARTITION_NAME,CAT_NAME) USING BTREE;
-&lt;/code>&lt;/pr</description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;p>When you upgrade your hive, there are some changes on tables in rdbms. You can find needed SQLs depending on version at &lt;a href="https://github.com/apache/hive/tree/master/standalone-metastore/metastore-server/src/main/sql/mysql">https://github.com/apache/hive/tree/master/standalone-metastore/metastore-server/src/main/sql/mysql&lt;/a>.&lt;/p></description></item></channel></rss>

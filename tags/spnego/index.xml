@@ -7,4 +7,6 @@
 &lt;/li>
 &lt;/ul>
 &lt;p>I guess that this is caused by sharing the same kerberos keytab (&lt;code>/etc/security/keytabs/spnego.service.keytab&lt;/code>) and principal(&lt;code>HTTP/_HOST@{REALM}&lt;/code>) among Hadoop daemons (NameNode, DataNode, JournalNodes, ResourceManager, NodeManager &amp;hellip;). I assume that DataNode misjudges it is a replay attack in certain circumstances.&lt;/p>
-&lt;p>Adding the following jvm system properties to Hadoop daemons will fix this issue as a workaround. It means java process will not use replay cache.&lt;/p></description></item></channel></rss>
+&lt;p>Adding the following jvm system properties to Hadoop daemons will fix this issue as a workaround. It means java process will not use replay cache.&lt;/p>
+&lt;pre tabindex="0">&lt;code>-Dsun.security.krb5.rcache=none
+&lt;/code>&lt;/pre></description></item></channel></rss>

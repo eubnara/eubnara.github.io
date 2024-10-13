@@ -5,7 +5,21 @@ If a client gets data bigger than the setting, it will get an error.&lt;/p>
 &lt;li>&lt;a href="https://issues.apache.org/jira/browse/HIVE-21993">https://issues.apache.org/jira/browse/HIVE-21993&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://issues.apache.org/jira/browse/YARN-2962">https://issues.apache.org/jira/browse/YARN-2962&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>In order to avoid this errors. Some metrics should be monitored on zookeeper.&lt;/p></description></item><item><title>Checklist for hive metastore when using mysql</title><link>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</link><pubDate>Thu, 12 Oct 2023 08:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</guid><description>&lt;h1 id="mysql-index">MySQL Index&lt;/h1>
+&lt;p>In order to avoid this errors. Some metrics should be monitored on zookeeper.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>last_client_response_size&lt;/code> or &lt;code>max_client_response_size&lt;/code>
+&lt;ul>
+&lt;li>&lt;code>client_response_size&lt;/code> is a response size in bytes from zookeeper server to client.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>last_proposal_size&lt;/code> or &lt;code>max_proposal_size&lt;/code>
+&lt;ul>
+&lt;li>&lt;code>proposal_size&lt;/code> is a proposal size in bytes from zookeeper server leader to follower.&lt;/li>
+&lt;li>&lt;code>proposal&lt;/code>?: refer to &lt;a href="https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html">https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>These values should be lower than &lt;code>jute.maxbuffer&lt;/code>. This setting can be set through jvm argument like &lt;code>-Djute.maxbuffer=10485760&lt;/code> (10mb).&lt;/p></description></item><item><title>Checklist for hive metastore when using mysql</title><link>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</link><pubDate>Thu, 12 Oct 2023 08:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</guid><description>&lt;h1 id="mysql-index">MySQL Index&lt;/h1>
 &lt;p>There are some expensive operations for hive metastore when accessing or storing metadatas on RDBMS.&lt;br>
 Here are some official hive patches for indexing.&lt;/p>
 &lt;pre tabindex="0">&lt;code>-- HIVE-21063
@@ -17,10 +31,11 @@ DROP INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS;
 CREATE INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS (DB_NAME, TABLE_NAME, COLUMN_NAME, CAT_NAME) USING BTREE;
 DROP INDEX PCS_STATS_IDX ON PART_COL_STATS;
 CREATE INDEX PCS_STATS_IDX ON PART_COL_STATS (DB_NAME,TABLE_NAME,COLUMN_NAME,PARTITION_NAME,CAT_NAME) USING BTREE;
-&lt;/code>&lt;/pr</description></item><item><title>About "HADOOP_CLASSPATH" environment variable</title><link>https://eubnara.github.io/computer-science/hadoop/hadoop-classpath/</link><pubDate>Sun, 05 Feb 2023 16:54:58 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/hadoop-classpath/</guid><description>&lt;ul>
+&lt;/code>&lt;/pre>&lt;p>When you upgrade your hive, there are some changes on tables in rdbms. You can find needed SQLs depending on version at &lt;a href="https://github.com/apache/hive/tree/master/standalone-metastore/metastore-server/src/main/sql/mysql">https://github.com/apache/hive/tree/master/standalone-metastore/metastore-server/src/main/sql/mysql&lt;/a>.&lt;/p></description></item><item><title>About "HADOOP_CLASSPATH" environment variable</title><link>https://eubnara.github.io/computer-science/hadoop/hadoop-classpath/</link><pubDate>Sun, 05 Feb 2023 16:54:58 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/hadoop-classpath/</guid><description>&lt;ul>
 &lt;li>&lt;a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/UnixShellGuide.html#HADOOP_CLASSPATH">https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/UnixShellGuide.html#HADOOP_CLASSPATH&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>In Hadoop ecosystem, &lt;code>HADOOP_CLASSPATH&lt;/code> environment variable is commonly used in many places. &lt;code>Hive&lt;/code> is use this variable, too.
 I wonder that how the &lt;code>HADOOP_CLASSPATH&lt;/code> variable is used in a script like &lt;code>beeline&lt;/code>. I cannot find &lt;code>HADOOP_CLASSPATH&lt;/code> variable in &lt;code>Hive&lt;/code> source codes.
 I finally figure out that when executing &lt;code>beeline&lt;/code> it uses &lt;code>hadoop jar&lt;/code> command. (&lt;a href="https://github.com/apache/hive/blob/rel/release-3.1.3/bin/ext/beeline.sh#L35">https://github.com/apache/hive/blob/rel/release-3.1.3/bin/ext/beeline.sh#L35&lt;/a>)
-It uses &lt;code>RunJar.java&lt;/code> where &lt;code>HADOOP_CLASSPATH&lt;/code> is used to set &lt;code>CLASSPATH&lt;/code>. (&lt;a href="https://github.com/apache/hadoop/blob/rel/release-3.3.4/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/RunJar.java#L347-L351">https://github.com/apache/hadoop/blob/rel/release-3.3.4/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/RunJar.java#L347-L351&lt;/a>)&lt;/p></description></item></channel></rss>
+It uses &lt;code>RunJar.java&lt;/code> where &lt;code>HADOOP_CLASSPATH&lt;/code> is used to set &lt;code>CLASSPATH&lt;/code>. (&lt;a href="https://github.com/apache/hadoop/blob/rel/release-3.3.4/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/RunJar.java#L347-L351">https://github.com/apache/hadoop/blob/rel/release-3.3.4/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/RunJar.java#L347-L351&lt;/a>)&lt;/p>
+&lt;p>If something in Hadoop ecosystem uses &lt;code>RunJar#main&lt;/code>, it probably repect &lt;code>HADOOP_CLASSPATH&lt;/code> environment variable.&lt;/p></description></item></channel></rss>

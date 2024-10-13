@@ -5,4 +5,18 @@ If a client gets data bigger than the setting, it will get an error.&lt;/p>
 &lt;li>&lt;a href="https://issues.apache.org/jira/browse/HIVE-21993">https://issues.apache.org/jira/browse/HIVE-21993&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://issues.apache.org/jira/browse/YARN-2962">https://issues.apache.org/jira/browse/YARN-2962&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>In order to avoid this errors. Some metrics should be monitored on zookeeper.&lt;/p></description></item></channel></rss>
+&lt;p>In order to avoid this errors. Some metrics should be monitored on zookeeper.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>last_client_response_size&lt;/code> or &lt;code>max_client_response_size&lt;/code>
+&lt;ul>
+&lt;li>&lt;code>client_response_size&lt;/code> is a response size in bytes from zookeeper server to client.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>last_proposal_size&lt;/code> or &lt;code>max_proposal_size&lt;/code>
+&lt;ul>
+&lt;li>&lt;code>proposal_size&lt;/code> is a proposal size in bytes from zookeeper server leader to follower.&lt;/li>
+&lt;li>&lt;code>proposal&lt;/code>?: refer to &lt;a href="https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html">https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>These values should be lower than &lt;code>jute.maxbuffer&lt;/code>. This setting can be set through jvm argument like &lt;code>-Djute.maxbuffer=10485760&lt;/code> (10mb).&lt;/p></description></item></channel></rss>
