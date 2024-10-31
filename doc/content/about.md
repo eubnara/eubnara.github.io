@@ -19,6 +19,7 @@ I work as a Data Engineer.
 
 ## Hadoop
 
+- [HDFS-17655](https://issues.apache.org/jira/browse/HDFS-17655): Cannot run HDFS balancer with BlockPlacementPolicyWithNodeGroup
 - [HADOOP-19319](https://issues.apache.org/jira/browse/HADOOP-19319): configurationChangeMonitor is not properly set on HttpServer2
 - [HADOOP-18806](https://issues.apache.org/jira/browse/HADOOP-18806): Document missing property (ipc.server.read.threadpool.size) in core-default.xml
 - [HADOOP-18666](https://issues.apache.org/jira/browse/HADOOP-18666): A whitelist of endpoints to skip Kerberos authentication doesn't work for ResourceManager and Job History Server
