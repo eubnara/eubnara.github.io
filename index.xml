@@ -157,6 +157,7 @@ I work as a Data Engineer.&lt;/p>
 &lt;/ul>
 &lt;h2 id="apache-impala">Apache Impala&lt;/h2>
 &lt;ul>
+&lt;li>&lt;a href="https://issues.apache.org/jira/browse/IMPALA-9170">IMPALA-9170&lt;/a>: close idle connections without an associated session&lt;/li>
 &lt;li>&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13327">IMPALA-13327&lt;/a>: bin/bootstrap_toolchain.py always download hbase-2.6.0-hadoop3-bin.tar.gz when USE_APACHE_COMPONENTS=true&lt;/li>
 &lt;li>&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13311">IMPALA-13311&lt;/a>: Hive3 INSERT failed by ClassNotFoundException: org.apache.tez.runtime.api.Event
 &lt;ul>
