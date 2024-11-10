@@ -62,7 +62,7 @@ I work as a Data Engineer.
 ## Apache Ranger
 
 - [RANGER-4887](https://issues.apache.org/jira/browse/RANGER-4887): Change default configuration values for column masking and row-level filtering on hive policy
-- [RANGER-4886](https://issues.apache.org/jira/browse/RANGER-4886): Html-unescaping for user, group and role name on policy items
+- [RANGER-4886](https://issues.apache.org/jira/browse/RANGER-4886): do not Html-escape for user, group and role name
 - [RANGER-4418](https://issues.apache.org/jira/browse/RANGER-4418): Upgrade hadoop version and use shaded hadoop client artifacts
 - [RANGER-4247](https://issues.apache.org/jira/browse/RANGER-4247): auditPolicyEvaluators should be set before logging it
 - [RANGER-4236](https://issues.apache.org/jira/browse/RANGER-4236): enhance Ranger JSON audit to HDFS by compressing as gzip
