@@ -61,6 +61,7 @@ I work as a Data Engineer.
 
 ## Apache Ranger
 
+- [RANGER-5110](https://issues.apache.org/jira/browse/RANGER-5110): Update the FQDN of users and groups whenever it changes
 - [RANGER-4887](https://issues.apache.org/jira/browse/RANGER-4887): Change default configuration values for column masking and row-level filtering on hive policy
 - [RANGER-4886](https://issues.apache.org/jira/browse/RANGER-4886): do not Html-escape for user, group and role name
 - [RANGER-4418](https://issues.apache.org/jira/browse/RANGER-4418): Upgrade hadoop version and use shaded hadoop client artifacts
