@@ -79,6 +79,8 @@ I work as a Data Engineer.
 
 ## Apache Impala
 
+- [IMPALA-13696](https://issues.apache.org/jira/browse/IMPALA-13696): Exclude conflicting JAX-RS libraries
+  - https://gerrit.cloudera.org/#/c/22394/
 - [IMPALA-9170](https://issues.apache.org/jira/browse/IMPALA-9170): close idle connections without an associated session
 - [IMPALA-13327](https://issues.apache.org/jira/browse/IMPALA-13327): bin/bootstrap_toolchain.py always download hbase-2.6.0-hadoop3-bin.tar.gz when USE_APACHE_COMPONENTS=true
 - [IMPALA-13311](https://issues.apache.org/jira/browse/IMPALA-13311): Hive3 INSERT failed by ClassNotFoundException: org.apache.tez.runtime.api.Event
