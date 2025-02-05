@@ -38,6 +38,10 @@ I work as a Data Engineer.
 - [HBASE-28816](https://issues.apache.org/jira/browse/HBASE-28816): The description of "hbase.superuser" is confusing
 - [HBASE-28294](https://issues.apache.org/jira/browse/HBASE-28294): Support to skip Kerberos authentication for metric endpoints
 
+## Apache Hive
+
+- [HIVE-28739](https://issues.apache.org/jira/browse/HIVE-28739): support restricting users to create deferred view
+
 ## Apache Bigtop
 
 - [BIGTOP-3906](https://issues.apache.org/jira/browse/BIGTOP-3906): Wrapper script for hive sources wrong default file
