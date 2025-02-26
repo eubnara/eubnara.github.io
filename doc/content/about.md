@@ -49,6 +49,8 @@ I work as a Data Engineer.
 
 ## Apache Ambari
 
+- [AMBARI-26312](https://issues.apache.org/jira/browse/AMBARI-26312): Clean up RequestScheduleEntity and RequestScheduleBatchRequestEntity also
+- [AMBARI-26311](https://issues.apache.org/jira/browse/AMBARI-26311): postgresql-server should be installed even though ambari-server is configured with mysql
 - [AMBARI-26075](https://issues.apache.org/jira/browse/AMBARI-26075): Wrong datanode pid file when security enabled and unprivileged port is used
 - [AMBARI-25891](https://issues.apache.org/jira/browse/AMBARI-25891): Enhancements when regenerating keytabs and changing Kerberos configurations
 - [AMBARI-25797](https://issues.apache.org/jira/browse/AMBARI-25797): Fail to add a component on the same machine with ambari-server of a new service with no kerberos identity when kerberos enabled
