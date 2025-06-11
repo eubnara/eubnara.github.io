@@ -4,10 +4,8 @@
 
 - https://hub.docker.com/r/klakegg/hugo
 - https://gohugo.io/installation/linux/
+- https://github.com/gohugoio/hugo/releases
 
-```
-$ sudo apt install hugo
-```
 
 ## 로컬 서버 테스트
 
