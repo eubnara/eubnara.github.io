@@ -38,6 +38,10 @@ I work as a Data Engineer.
 - [HBASE-28816](https://issues.apache.org/jira/browse/HBASE-28816): The description of "hbase.superuser" is confusing
 - [HBASE-28294](https://issues.apache.org/jira/browse/HBASE-28294): Support to skip Kerberos authentication for metric endpoints
 
+## Apache Phoenix
+
+- [PHOENIX-7635](https://issues.apache.org/jira/browse/PHOENIX-7635): Update Connectors to use Spark 3.5.6
+
 ## Apache Hive
 
 - [HIVE-28739](https://issues.apache.org/jira/browse/HIVE-28739): support restricting users to create deferred view
