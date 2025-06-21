@@ -17,7 +17,7 @@ docker run -d -p 8081:8081 --name nexus sonatype/nexus3
 
 - `cargo-proxy` 로 repository 를 만들었다고 가정, remote url 은 `https://index.crates.io` 로 한다.
 
-![nexus](/doc/static/images/computer-science/rust/cargo_repository_proxy/nexus.png)
+![nexus](/images/computer-science/rust/cargo_repository_proxy/nexus.png)
 
 
 - `.cargo/config.toml` 에 다음과 같이 내용 추가.
@@ -37,7 +37,7 @@ registry = "sparse+http://localhost:8081/repository/cargo-proxy/"
 ```
 
 https://index.crates.io/ 에 써있는 설명을 보니 `sparse` 프로토콜을 쓰는 것 같다. 위에 config.toml 에서도 `sparse+` 를 빼먹으면 정상동작하지 않는다.
-![index_crates_io](/doc/static/images/computer-science/rust/cargo_repository_proxy/index_crates_io.png)
+![index_crates_io](/images/computer-science/rust/cargo_repository_proxy/index_crates_io.png)
 
 - 빌드
 ```
