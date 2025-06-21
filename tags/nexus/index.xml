@@ -6,7 +6,7 @@
 &lt;/code>&lt;/pre>&lt;ul>
 &lt;li>&lt;code>cargo-proxy&lt;/code> 로 repository 를 만들었다고 가정, remote url 은 &lt;code>https://index.crates.io&lt;/code> 로 한다.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img alt="nexus" loading="lazy" src="https://eubnara.github.io/doc/static/images/computer-science/rust/cargo_repository_proxy/nexus.png">&lt;/p>
+&lt;p>&lt;img alt="nexus" loading="lazy" src="https://eubnara.github.io/images/computer-science/rust/cargo_repository_proxy/nexus.png">&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>.cargo/config.toml&lt;/code> 에 다음과 같이 내용 추가.&lt;/li>
 &lt;/ul>
@@ -20,4 +20,4 @@ replace-with = &amp;#34;nexus&amp;#34;
 [source.nexus]
 registry = &amp;#34;sparse+http://localhost:8081/repository/cargo-proxy/&amp;#34;
 &lt;/code>&lt;/pre>&lt;p>&lt;a href="https://index.crates.io/">https://index.crates.io/&lt;/a> 에 써있는 설명을 보니 &lt;code>sparse&lt;/code> 프로토콜을 쓰는 것 같다. 위에 config.toml 에서도 &lt;code>sparse+&lt;/code> 를 빼먹으면 정상동작하지 않는다.
-&lt;img alt="index_crates_io" loading="lazy" src="https://eubnara.github.io/doc/static/images/computer-science/rust/cargo_repository_proxy/index_crates_io.png">&lt;/p></description></item></channel></rss>
+&lt;img alt="index_crates_io" loading="lazy" src="https://eubnara.github.io/images/computer-science/rust/cargo_repository_proxy/index_crates_io.png">&lt;/p></description></item></channel></rss>
