@@ -53,6 +53,7 @@ I work as a Data Engineer.
 
 ## Apache Ambari
 
+- [AMBARI-26533](https://issues.apache.org/jira/browse/AMBARI-26533): Ranger Admin Restart Deletes JDBC JAR When Installed on Same Host as Ambari Server
 - [AMBARI-26312](https://issues.apache.org/jira/browse/AMBARI-26312): Clean up RequestScheduleEntity and RequestScheduleBatchRequestEntity also
 - [AMBARI-26311](https://issues.apache.org/jira/browse/AMBARI-26311): postgresql-server should be installed even though ambari-server is configured with mysql
 - [AMBARI-26075](https://issues.apache.org/jira/browse/AMBARI-26075): Wrong datanode pid file when security enabled and unprivileged port is used
