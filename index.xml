@@ -190,6 +190,11 @@ I work as a Data Engineer.&lt;/p>
 &lt;/ul>
 &lt;h2 id="apache-impala">Apache Impala&lt;/h2>
 &lt;ul>
+&lt;li>&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13413">IMPALA-13413&lt;/a>: num_cores flag does not work.
+&lt;ul>
+&lt;li>&lt;a href="https://gerrit.cloudera.org/#/c/23333/">https://gerrit.cloudera.org/#/c/23333/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;li>&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13696">IMPALA-13696&lt;/a>: Exclude conflicting JAX-RS libraries
 &lt;ul>
 &lt;li>&lt;a href="https://gerrit.cloudera.org/#/c/22394/">https://gerrit.cloudera.org/#/c/22394/&lt;/a>&lt;/li>
