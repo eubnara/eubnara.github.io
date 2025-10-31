@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>EUB's second brain</title><link>https://eubnara.github.io/</link><description>Recent content on EUB's second brain</description><generator>Hugo -- 0.148.2</generator><language>en-us</language><lastBuildDate>Sat, 21 Jun 2025 15:13:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Proxy repository for cargo/rust</title><link>https://eubnara.github.io/computer-science/rust/cargo_repository_proxy/</link><pubDate>Sat, 21 Jun 2025 15:13:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/rust/cargo_repository_proxy/</guid><description>&lt;h1 id="sonatype-nexus-community-edition-사용-예">Sonatype Nexus community edition 사용 예&lt;/h1>
-&lt;ul>
-&lt;li>3.77 이상의 버전을 써야 ce 버전에서도 cargo repository 를 쓸 수 있다. 단, 3.77 버전부터는 사용량 hard limit 이 존재하게 된다. 다음 명령으로 간단히 로컬에 구동&lt;/li>
-&lt;/ul>
-&lt;pre tabindex="0">&lt;code>docker run -d -p 8081:8081 --name nexus sonatype/nexus3
-&lt;/code>&lt;/pre>&lt;ul>
-&lt;li>&lt;code>cargo-proxy&lt;/code> 로 repository 를 만들었다고 가정, remote url 은 &lt;code>https://index.crates.io&lt;/code> 로 한다.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img alt="nexus" loading="lazy" src="https://eubnara.github.io/images/computer-science/rust/cargo_repository_proxy/nexus.png">&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>.cargo/config.toml&lt;/code> 에 다음과 같이 내용 추가.&lt;/li>
-&lt;/ul>
-&lt;pre tabindex="0">&lt;code>❯ cat .cargo/config.toml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>EUB's second brain</title><link>https://eubnara.github.io/</link><description>Recent content on EUB's second brain</description><generator>Hugo -- 0.152.2</generator><language>en-us</language><lastBuildDate>Sat, 21 Jun 2025 15:13:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Proxy repository for cargo/rust</title><link>https://eubnara.github.io/computer-science/rust/cargo_repository_proxy/</link><pubDate>Sat, 21 Jun 2025 15:13:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/rust/cargo_repository_proxy/</guid><description>&lt;h1 id="sonatype-nexus-community-edition-사용-예"&gt;Sonatype Nexus community edition 사용 예&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;3.77 이상의 버전을 써야 ce 버전에서도 cargo repository 를 쓸 수 있다. 단, 3.77 버전부터는 사용량 hard limit 이 존재하게 된다. 다음 명령으로 간단히 로컬에 구동&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker run -d -p 8081:8081 --name nexus sonatype/nexus3
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cargo-proxy&lt;/code&gt; 로 repository 를 만들었다고 가정, remote url 은 &lt;code&gt;https://index.crates.io&lt;/code&gt; 로 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="nexus" loading="lazy" src="https://eubnara.github.io/images/computer-science/rust/cargo_repository_proxy/nexus.png"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.cargo/config.toml&lt;/code&gt; 에 다음과 같이 내용 추가.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;❯ cat .cargo/config.toml
 [registries.nexus]
 index = &amp;#34;sparse+http://localhost:8081/repository/cargo-proxy/&amp;#34;
 [registry]
@@ -19,34 +19,34 @@ default = &amp;#34;nexus&amp;#34;
 replace-with = &amp;#34;nexus&amp;#34;
 [source.nexus]
 registry = &amp;#34;sparse+http://localhost:8081/repository/cargo-proxy/&amp;#34;
-&lt;/code>&lt;/pre>&lt;p>&lt;a href="https://index.crates.io/">https://index.crates.io/&lt;/a> 에 써있는 설명을 보니 &lt;code>sparse&lt;/code> 프로토콜을 쓰는 것 같다. 위에 config.toml 에서도 &lt;code>sparse+&lt;/code> 를 빼먹으면 정상동작하지 않는다.
-&lt;img alt="index_crates_io" loading="lazy" src="https://eubnara.github.io/images/computer-science/rust/cargo_repository_proxy/index_crates_io.png">&lt;/p></description></item><item><title>Don't sync privileges from ranger to hive</title><link>https://eubnara.github.io/computer-science/hadoop/dont-sync-privileges-from-ranger-to-hive/</link><pubDate>Sat, 19 Oct 2024 16:26:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/dont-sync-privileges-from-ranger-to-hive/</guid><description>&lt;p>When Apache Ranger is configured for authorization on Secure Hadoop cluster, Hive below 4.x.x synchronizes all the ranger hive policies to rdbms for Hive as default. It is unnecessary and make unnecessary high load on db. See &lt;a href="https://issues.apache.org/jira/browse/HIVE-25391">https://issues.apache.org/jira/browse/HIVE-25391&lt;/a>. You can disable it with the configurations on HiveServer2 as follows.&lt;/p>
-&lt;pre tabindex="0">&lt;code>hive.privilege.synchronizer=false
-&lt;/code>&lt;/pre></description></item><item><title>Monitoring metrics related to "jute.maxbuffer"</title><link>https://eubnara.github.io/computer-science/hadoop/monitoring-jute.maxbuffer/</link><pubDate>Sat, 25 May 2024 22:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/monitoring-jute.maxbuffer/</guid><description>&lt;p>There is a configuration named as &amp;ldquo;jute.maxbuffer&amp;rdquo; when using zookeeper. This can be set on zookeeper client side or server side. On zookeeper client side, the setting should be lower than that on zookeeper server.
-If a client gets data bigger than the setting, it will get an error.&lt;/p>
-&lt;p>There are some related issue.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HIVE-21993">https://issues.apache.org/jira/browse/HIVE-21993&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/YARN-2962">https://issues.apache.org/jira/browse/YARN-2962&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>In order to avoid this errors. Some metrics should be monitored on zookeeper.&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>last_client_response_size&lt;/code> or &lt;code>max_client_response_size&lt;/code>
-&lt;ul>
-&lt;li>&lt;code>client_response_size&lt;/code> is a response size in bytes from zookeeper server to client.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;code>last_proposal_size&lt;/code> or &lt;code>max_proposal_size&lt;/code>
-&lt;ul>
-&lt;li>&lt;code>proposal_size&lt;/code> is a proposal size in bytes from zookeeper server leader to follower.&lt;/li>
-&lt;li>&lt;code>proposal&lt;/code>?: refer to &lt;a href="https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html">https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;p>These values should be lower than &lt;code>jute.maxbuffer&lt;/code>. This setting can be set through jvm argument like &lt;code>-Djute.maxbuffer=10485760&lt;/code> (10mb).&lt;/p></description></item><item><title>Checklist for hive metastore when using mysql</title><link>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</link><pubDate>Thu, 12 Oct 2023 08:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</guid><description>&lt;h1 id="mysql-index">MySQL Index&lt;/h1>
-&lt;p>There are some expensive operations for hive metastore when accessing or storing metadatas on RDBMS.&lt;br>
-Here are some official hive patches for indexing.&lt;/p>
-&lt;pre tabindex="0">&lt;code>-- HIVE-21063
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href="https://index.crates.io/"&gt;https://index.crates.io/&lt;/a&gt; 에 써있는 설명을 보니 &lt;code&gt;sparse&lt;/code&gt; 프로토콜을 쓰는 것 같다. 위에 config.toml 에서도 &lt;code&gt;sparse+&lt;/code&gt; 를 빼먹으면 정상동작하지 않는다.
+&lt;img alt="index_crates_io" loading="lazy" src="https://eubnara.github.io/images/computer-science/rust/cargo_repository_proxy/index_crates_io.png"&gt;&lt;/p&gt;</description></item><item><title>Don't sync privileges from ranger to hive</title><link>https://eubnara.github.io/computer-science/hadoop/dont-sync-privileges-from-ranger-to-hive/</link><pubDate>Sat, 19 Oct 2024 16:26:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/dont-sync-privileges-from-ranger-to-hive/</guid><description>&lt;p&gt;When Apache Ranger is configured for authorization on Secure Hadoop cluster, Hive below 4.x.x synchronizes all the ranger hive policies to rdbms for Hive as default. It is unnecessary and make unnecessary high load on db. See &lt;a href="https://issues.apache.org/jira/browse/HIVE-25391"&gt;https://issues.apache.org/jira/browse/HIVE-25391&lt;/a&gt;. You can disable it with the configurations on HiveServer2 as follows.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;hive.privilege.synchronizer=false
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Monitoring metrics related to "jute.maxbuffer"</title><link>https://eubnara.github.io/computer-science/hadoop/monitoring-jute.maxbuffer/</link><pubDate>Sat, 25 May 2024 22:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/monitoring-jute.maxbuffer/</guid><description>&lt;p&gt;There is a configuration named as &amp;ldquo;jute.maxbuffer&amp;rdquo; when using zookeeper. This can be set on zookeeper client side or server side. On zookeeper client side, the setting should be lower than that on zookeeper server.
+If a client gets data bigger than the setting, it will get an error.&lt;/p&gt;
+&lt;p&gt;There are some related issue.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HIVE-21993"&gt;https://issues.apache.org/jira/browse/HIVE-21993&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/YARN-2962"&gt;https://issues.apache.org/jira/browse/YARN-2962&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In order to avoid this errors. Some metrics should be monitored on zookeeper.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;last_client_response_size&lt;/code&gt; or &lt;code&gt;max_client_response_size&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;client_response_size&lt;/code&gt; is a response size in bytes from zookeeper server to client.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;last_proposal_size&lt;/code&gt; or &lt;code&gt;max_proposal_size&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;proposal_size&lt;/code&gt; is a proposal size in bytes from zookeeper server leader to follower.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;proposal&lt;/code&gt;?: refer to &lt;a href="https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html"&gt;https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These values should be lower than &lt;code&gt;jute.maxbuffer&lt;/code&gt;. This setting can be set through jvm argument like &lt;code&gt;-Djute.maxbuffer=10485760&lt;/code&gt; (10mb).&lt;/p&gt;</description></item><item><title>Checklist for hive metastore when using mysql</title><link>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</link><pubDate>Thu, 12 Oct 2023 08:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/hivemetastore-mysql/</guid><description>&lt;h1 id="mysql-index"&gt;MySQL Index&lt;/h1&gt;
+&lt;p&gt;There are some expensive operations for hive metastore when accessing or storing metadatas on RDBMS.&lt;br&gt;
+Here are some official hive patches for indexing.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;-- HIVE-21063
 CREATE UNIQUE INDEX `NOTIFICATION_LOG_EVENT_ID` ON NOTIFICATION_LOG (`EVENT_ID`) USING BTREE;
 -- HIVE-21487
 CREATE INDEX COMPLETED_COMPACTIONS_RES ON COMPLETED_COMPACTIONS (CC_DATABASE,CC_TABLE,CC_PARTITION);
@@ -55,16 +55,17 @@ DROP INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS;
 CREATE INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS (DB_NAME, TABLE_NAME, COLUMN_NAME, CAT_NAME) USING BTREE;
 DROP INDEX PCS_STATS_IDX ON PART_COL_STATS;
 CREATE INDEX PCS_STATS_IDX ON PART_COL_STATS (DB_NAME,TABLE_NAME,COLUMN_NAME,PARTITION_NAME,CAT_NAME) USING BTREE;
-&lt;/code>&lt;/pre>&lt;p>When you upgrade your hive, there are some changes on tables in rdbms. You can find needed SQLs depending on version at &lt;a href="https://github.com/apache/hive/tree/master/standalone-metastore/metastore-server/src/main/sql/mysql">https://github.com/apache/hive/tree/master/standalone-metastore/metastore-server/src/main/sql/mysql&lt;/a>.&lt;/p></description></item><item><title>Some cases where "rdns = false" in krb5.conf does not work in Hadoop ecosystem</title><link>https://eubnara.github.io/computer-science/hadoop/rdns-false-not-work/</link><pubDate>Sun, 02 Jul 2023 18:48:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/rdns-false-not-work/</guid><description>&lt;p>&lt;a href="https://web.mit.edu/kerberos/krb5-1.13/doc/admin/princ_dns.html">https://web.mit.edu/kerberos/krb5-1.13/doc/admin/princ_dns.html&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>Operating system bugs may prevent a setting of rdns = false from disabling reverse DNS lookup. Some versions of GNU libc have a bug in getaddrinfo() that cause them to look up PTR records even when not required. MIT Kerberos releases krb5-1.10.2 and newer have a workaround for this problem, as does the krb5-1.9.x series as of release krb5-1.9.4.&lt;/p>&lt;/blockquote>
-&lt;p>There are some cases where &amp;ldquo;rdns = false&amp;rdquo; in krb5.conf is not respected in Hadoop ecosystem. You can try to modify &lt;code>/etc/hosts&lt;/code> or register PTR records to fix this kind of issues.&lt;/p></description></item><item><title>Hadoop commands</title><link>https://eubnara.github.io/computer-science/hadoop/commands/</link><pubDate>Sun, 05 Feb 2023 17:02:26 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/commands/</guid><description>&lt;h1 id="hdfs">HDFS&lt;/h1>
-&lt;h2 id="reconfigure-without-restart">Reconfigure without restart&lt;/h2>
-&lt;p>&lt;a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html">https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>configurable keys are limited without restart&lt;/li>
-&lt;/ul>
-&lt;pre tabindex="0">&lt;code>$ hdfs dfsadmin -reconfig namenode nn1.example.com:8020 properties
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When you upgrade your hive, there are some changes on tables in rdbms. You can find needed SQLs depending on version at &lt;a href="https://github.com/apache/hive/tree/master/standalone-metastore/metastore-server/src/main/sql/mysql"&gt;https://github.com/apache/hive/tree/master/standalone-metastore/metastore-server/src/main/sql/mysql&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Some cases where "rdns = false" in krb5.conf does not work in Hadoop ecosystem</title><link>https://eubnara.github.io/computer-science/hadoop/rdns-false-not-work/</link><pubDate>Sun, 02 Jul 2023 18:48:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/rdns-false-not-work/</guid><description>&lt;p&gt;&lt;a href="https://web.mit.edu/kerberos/krb5-1.13/doc/admin/princ_dns.html"&gt;https://web.mit.edu/kerberos/krb5-1.13/doc/admin/princ_dns.html&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Operating system bugs may prevent a setting of rdns = false from disabling reverse DNS lookup. Some versions of GNU libc have a bug in getaddrinfo() that cause them to look up PTR records even when not required. MIT Kerberos releases krb5-1.10.2 and newer have a workaround for this problem, as does the krb5-1.9.x series as of release krb5-1.9.4.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There are some cases where &amp;ldquo;rdns = false&amp;rdquo; in krb5.conf is not respected in Hadoop ecosystem. You can try to modify &lt;code&gt;/etc/hosts&lt;/code&gt; or register PTR records to fix this kind of issues.&lt;/p&gt;</description></item><item><title>Hadoop commands</title><link>https://eubnara.github.io/computer-science/hadoop/commands/</link><pubDate>Sun, 05 Feb 2023 17:02:26 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/commands/</guid><description>&lt;h1 id="hdfs"&gt;HDFS&lt;/h1&gt;
+&lt;h2 id="reconfigure-without-restart"&gt;Reconfigure without restart&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html"&gt;https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;configurable keys are limited without restart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;$ hdfs dfsadmin -reconfig namenode nn1.example.com:8020 properties
 Node [nn1.example.com:8020] Reconfigurable properties:
 dfs.block.placement.ec.classname
 dfs.block.replicator.classname
@@ -81,217 +82,221 @@ dfs.storage.policy.satisfier.mode
 fs.protected.directories
 hadoop.caller.context.enabled
 ipc.8020.backoff.enable
-&lt;/code>&lt;/pre></description></item><item><title>About "HADOOP_CLASSPATH" environment variable</title><link>https://eubnara.github.io/computer-science/hadoop/hadoop-classpath/</link><pubDate>Sun, 05 Feb 2023 16:54:58 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/hadoop-classpath/</guid><description>&lt;ul>
-&lt;li>&lt;a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/UnixShellGuide.html#HADOOP_CLASSPATH">https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/UnixShellGuide.html#HADOOP_CLASSPATH&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>In Hadoop ecosystem, &lt;code>HADOOP_CLASSPATH&lt;/code> environment variable is commonly used in many places. &lt;code>Hive&lt;/code> is use this variable, too.
-I wonder that how the &lt;code>HADOOP_CLASSPATH&lt;/code> variable is used in a script like &lt;code>beeline&lt;/code>. I cannot find &lt;code>HADOOP_CLASSPATH&lt;/code> variable in &lt;code>Hive&lt;/code> source codes.
-I finally figure out that when executing &lt;code>beeline&lt;/code> it uses &lt;code>hadoop jar&lt;/code> command. (&lt;a href="https://github.com/apache/hive/blob/rel/release-3.1.3/bin/ext/beeline.sh#L35">https://github.com/apache/hive/blob/rel/release-3.1.3/bin/ext/beeline.sh#L35&lt;/a>)
-It uses &lt;code>RunJar.java&lt;/code> where &lt;code>HADOOP_CLASSPATH&lt;/code> is used to set &lt;code>CLASSPATH&lt;/code>. (&lt;a href="https://github.com/apache/hadoop/blob/rel/release-3.3.4/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/RunJar.java#L347-L351">https://github.com/apache/hadoop/blob/rel/release-3.3.4/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/RunJar.java#L347-L351&lt;/a>)&lt;/p>
-&lt;p>If something in Hadoop ecosystem uses &lt;code>RunJar#main&lt;/code>, it probably repect &lt;code>HADOOP_CLASSPATH&lt;/code> environment variable.&lt;/p></description></item><item><title>SPNEGO-enabled Hadoop DataNode misjudges kerberos "replay attack".</title><link>https://eubnara.github.io/computer-science/hadoop/spnego-request-is-a-replay/</link><pubDate>Sun, 05 Feb 2023 16:01:17 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/spnego-request-is-a-replay/</guid><description>&lt;ul>
-&lt;li>references
-&lt;ul>
-&lt;li>&lt;a href="https://docs.cloudera.com/cloudera-manager/7.5.5/security-troubleshooting/cm-security-troubleshooting.pdf">https://docs.cloudera.com/cloudera-manager/7.5.5/security-troubleshooting/cm-security-troubleshooting.pdf&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://search-guard.com/elasticsearch-kibana-kerberos/">https://search-guard.com/elasticsearch-kibana-kerberos/&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;p>I guess that this is caused by sharing the same kerberos keytab (&lt;code>/etc/security/keytabs/spnego.service.keytab&lt;/code>) and principal(&lt;code>HTTP/_HOST@{REALM}&lt;/code>) among Hadoop daemons (NameNode, DataNode, JournalNodes, ResourceManager, NodeManager &amp;hellip;). I assume that DataNode misjudges it is a replay attack in certain circumstances.&lt;/p>
-&lt;p>Adding the following jvm system properties to Hadoop daemons will fix this issue as a workaround. It means java process will not use replay cache.&lt;/p>
-&lt;pre tabindex="0">&lt;code>-Dsun.security.krb5.rcache=none
-&lt;/code>&lt;/pre></description></item><item><title>About me</title><link>https://eubnara.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eubnara.github.io/about/</guid><description>&lt;p>My name is Yubi Lee.&lt;br>
-I work as a Data Engineer.&lt;/p>
-&lt;ul>
-&lt;li>email: &lt;a href="mailto:eubnara@gmail.com">eubnara@gmail.com&lt;/a>&lt;/li>
-&lt;li>github: &lt;a href="https://github.com/eubnara">https://github.com/eubnara&lt;/a>&lt;/li>
-&lt;li>linkedin: &lt;a href="https://kr.linkedin.com/in/yubi-lee-40a158130">https://kr.linkedin.com/in/yubi-lee-40a158130&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h1 id="open-source-contribution">Open source contribution&lt;/h1>
-&lt;h2 id="hadoop">Hadoop&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HDFS-17655">HDFS-17655&lt;/a>: Cannot run HDFS balancer with BlockPlacementPolicyWithNodeGroup&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HADOOP-19319">HADOOP-19319&lt;/a>: configurationChangeMonitor is not properly set on HttpServer2&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18806">HADOOP-18806&lt;/a>: Document missing property (ipc.server.read.threadpool.size) in core-default.xml&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18666">HADOOP-18666&lt;/a>: A whitelist of endpoints to skip Kerberos authentication doesn&amp;rsquo;t work for ResourceManager and Job History Server&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HDFS-16883">HDFS-16883&lt;/a>: fix duplicate field name in hdfs-default.xml&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18585">HADOOP-18585&lt;/a>: DataNode&amp;rsquo;s internal infoserver redirects with http scheme, not https when https enabled.&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18398">HADOOP-18398&lt;/a>: Prevent AvroRecord*.class from being included non-test jar&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18087">HADOOP-18087&lt;/a>: fix bugs when looking up record from upstream DNS servers.
-&lt;ul>
-&lt;li>When query A record which is chained by CNAME, YARN Registry DNS Server does not properly respond. Some CNAME records are missing.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HADOOP-17861">HADOOP-17861&lt;/a>: improve YARN Registry DNS Server qps&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HDFS-13259">HDFS-13259&lt;/a>: fix file preview bug in NameNode UI&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HDFS-13260">HDFS-13260&lt;/a>: fix guide about HA with QJM&lt;/li>
-&lt;/ul>
-&lt;h2 id="apache-hbase">Apache HBase&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HBASE-28911">HBASE-28911&lt;/a>: Automatic SSL keystore reloading for HttpServer&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HBASE-28816">HBASE-28816&lt;/a>: The description of &amp;ldquo;hbase.superuser&amp;rdquo; is confusing&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HBASE-28294">HBASE-28294&lt;/a>: Support to skip Kerberos authentication for metric endpoints&lt;/li>
-&lt;/ul>
-&lt;h2 id="apache-phoenix">Apache Phoenix&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/PHOENIX-7635">PHOENIX-7635&lt;/a>: Update Connectors to use Spark 3.5.6&lt;/li>
-&lt;/ul>
-&lt;h2 id="apache-hive">Apache Hive&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HIVE-28739">HIVE-28739&lt;/a>: support restricting users to create deferred view&lt;/li>
-&lt;/ul>
-&lt;h2 id="apache-bigtop">Apache Bigtop&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/BIGTOP-3906">BIGTOP-3906&lt;/a>: Wrapper script for hive sources wrong default file&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/BIGTOP-3850">BIGTOP-3850&lt;/a>: fix conflict when installing ranger-hdfs-plugin and ranger-yarn-plugin on the same machine&lt;/li>
-&lt;/ul>
-&lt;h2 id="apache-ambari">Apache Ambari&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26533">AMBARI-26533&lt;/a>: Ranger Admin Restart Deletes JDBC JAR When Installed on Same Host as Ambari Server&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26312">AMBARI-26312&lt;/a>: Clean up RequestScheduleEntity and RequestScheduleBatchRequestEntity also&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26311">AMBARI-26311&lt;/a>: postgresql-server should be installed even though ambari-server is configured with mysql&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26075">AMBARI-26075&lt;/a>: Wrong datanode pid file when security enabled and unprivileged port is used&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25891">AMBARI-25891&lt;/a>: Enhancements when regenerating keytabs and changing Kerberos configurations&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25797">AMBARI-25797&lt;/a>: Fail to add a component on the same machine with ambari-server of a new service with no kerberos identity when kerberos enabled&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25788">AMBARI-25788&lt;/a>: Ambari server keeps generating keytabs even with KerberosServerAction#OperationType.CREATE_MISSING option.&lt;/li>
-&lt;li>AMBARI-25624: optimize creating kerberos keytab
-&lt;ul>
-&lt;li>branch-2.7: &lt;a href="https://github.com/apache/ambari/pull/3353">https://github.com/apache/ambari/pull/3353&lt;/a>&lt;/li>
-&lt;li>trunk: &lt;a href="https://github.com/apache/ambari/pull/3588">https://github.com/apache/ambari/pull/3588&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25720">AMBARI-25720&lt;/a>: Support Apache Directory Server&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25719">AMBARI-25719&lt;/a>: Fix bug when enabling kerberos in Ambari 2.7.6
-&lt;ul>
-&lt;li>trunk: &lt;a href="https://github.com/apache/ambari/pull/3589">https://github.com/apache/ambari/pull/3589&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25619">AMBARI-25619&lt;/a>: improve &amp;ldquo;Prepare delete identities&amp;rdquo; process when deleting component in host in kerberized cluster&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25422">AMBARI-25422&lt;/a>: optimize loading the first page for Ambari UI&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25491">AMBARI-25491&lt;/a>: newline characters are ignored on custom property in Ambari Web editor&lt;/li>
-&lt;/ul>
-&lt;h2 id="apache-ranger">Apache Ranger&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/RANGER-5110">RANGER-5110&lt;/a>: Update the FQDN of users and groups whenever it changes&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/RANGER-4887">RANGER-4887&lt;/a>: Change default configuration values for column masking and row-level filtering on hive policy&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/RANGER-4886">RANGER-4886&lt;/a>: do not Html-escape for user, group and role name&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/RANGER-4418">RANGER-4418&lt;/a>: Upgrade hadoop version and use shaded hadoop client artifacts&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/RANGER-4247">RANGER-4247&lt;/a>: auditPolicyEvaluators should be set before logging it&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/RANGER-4236">RANGER-4236&lt;/a>: enhance Ranger JSON audit to HDFS by compressing as gzip&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/RANGER-4068">RANGER-4068&lt;/a>: fix error caused by missing dnsjava library&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/RANGER-3924">RANGER-3924&lt;/a>: fix unnecessary sync caused by incremeting timestamp value typo&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/RANGER-3858">RANGER-3858&lt;/a>: On dev-support, service creation and ranger-kafka-plugin setup are failed&lt;/li>
-&lt;/ul>
-&lt;h2 id="apache-spark">Apache Spark&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/SPARK-44976">SPARK-44976&lt;/a>: Utils.getCurrentUserName should return the full principal name&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/SPARK-40964">SPARK-40964&lt;/a>: (TBD) Cannot run spark history server with shaded hadoop jar&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/SPARK-40072">SPARK-40072&lt;/a>: fix build failure when using &lt;code>make-distributions.sh&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2 id="apache-impala">Apache Impala&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13413">IMPALA-13413&lt;/a>: num_cores flag does not work.
-&lt;ul>
-&lt;li>&lt;a href="https://gerrit.cloudera.org/#/c/23333/">https://gerrit.cloudera.org/#/c/23333/&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13696">IMPALA-13696&lt;/a>: Exclude conflicting JAX-RS libraries
-&lt;ul>
-&lt;li>&lt;a href="https://gerrit.cloudera.org/#/c/22394/">https://gerrit.cloudera.org/#/c/22394/&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/IMPALA-9170">IMPALA-9170&lt;/a>: close idle connections without an associated session&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13327">IMPALA-13327&lt;/a>: bin/bootstrap_toolchain.py always download hbase-2.6.0-hadoop3-bin.tar.gz when USE_APACHE_COMPONENTS=true&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13311">IMPALA-13311&lt;/a>: Hive3 INSERT failed by ClassNotFoundException: org.apache.tez.runtime.api.Event
-&lt;ul>
-&lt;li>&lt;a href="https://gerrit.cloudera.org/#/c/21706/">https://gerrit.cloudera.org/#/c/21706/&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13023">IMPALA-13023&lt;/a>: support webserver ldap filter when using spnego
-&lt;ul>
-&lt;li>&lt;a href="https://gerrit.cloudera.org/#/c/21339/">https://gerrit.cloudera.org/#/c/21339/&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/IMPALA-10408">IMPALA-10408&lt;/a>: Support Apache components to build Apache Impala to reduce dependencies of CDH or CDP
-&lt;ul>
-&lt;li>&lt;a href="https://gerrit.cloudera.org/#/c/18977/">https://gerrit.cloudera.org/#/c/18977/&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="apache-kudu">Apache KUDU&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/KUDU-3549">https://issues.apache.org/jira/browse/KUDU-3549&lt;/a>: String gauge exposed in prometheus format&lt;/li>
-&lt;/ul>
-&lt;h2 id="cloudera-hue">Cloudera HUE&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/cloudera/hue/pull/1134">https://github.com/cloudera/hue/pull/1134&lt;/a> (not merged): fix bug in handling &lt;code>+&lt;/code> character in filebrowser&lt;/li>
-&lt;li>&lt;a href="https://github.com/cloudera/hue/pull/1135">https://github.com/cloudera/hue/pull/1135&lt;/a>: fix bug in substituting &lt;code>liboozie.remote_deployement_dir&lt;/code> variable&lt;/li>
-&lt;/ul>
-&lt;h2 id="apache-zeppelin">Apache Zeppelin&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/ZEPPELIN-5594">ZEPPELIN-5594&lt;/a>: HDFS file id should be read as &amp;ldquo;long&amp;rdquo;, not &amp;ldquo;int&amp;rdquo;.&lt;/li>
-&lt;/ul>
-&lt;h2 id="apache-avro">Apache Avro&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/AVRO-3877">AVRO-3877&lt;/a>: [doc] fix wrong configuration for avro-maven-plugin in java example&lt;/li>
-&lt;/ul>
-&lt;h2 id="etc">ETC&lt;/h2>
-&lt;ul>
-&lt;li>Spring-shell
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/spring-projects/spring-shell/pull/432#issuecomment-1144522860">https://github.com/spring-projects/spring-shell/pull/432#issuecomment-1144522860&lt;/a>: add a feature to terminate spring-shell with &lt;code>CTRL+D&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>gotty-client
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/moul/gotty-client/pull/99">https://github.com/moul/gotty-client/pull/99&lt;/a>: fix disconnection caused by not handling &lt;code>syscall.EINTR&lt;/code>&lt;/li>
-&lt;li>fix basic auth. token base64 encoding
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/moul/gotty-client/pull/105">https://github.com/moul/gotty-client/pull/105&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/moul/gotty-client/pull/108">https://github.com/moul/gotty-client/pull/108&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="https://github.com/moul/gotty-client/pull/110">https://github.com/moul/gotty-client/pull/110&lt;/a>: get password without revealing it&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>react-native-cache
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/timfpark/react-native-cache/pull/25">https://github.com/timfpark/react-native-cache/pull/25&lt;/a>: add a feature to support cache expiration&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>discovery-zookeeper
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/naver/discovery-zookeeper">https://github.com/naver/discovery-zookeeper&lt;/a>&lt;/li>
-&lt;li>elasticsearch plugin to discovery hosts in cluster based on information in znode of Zookeeper&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>winstonjs
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/winstonjs/winston/pull/1559">https://github.com/winstonjs/winston/pull/1559&lt;/a>: fix confusing log message&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h1 id="presentation">Presentation&lt;/h1>
-&lt;ul>
-&lt;li>TossBank SLASH24: Building a Hadoop cluster with open source
-&lt;ul>
-&lt;li>&lt;a href="https://toss.im/slash-24/sessions/5">https://toss.im/slash-24/sessions/5&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.youtube.com/watch?v=4BcSVF4bLtU">https://www.youtube.com/watch?v=4BcSVF4bLtU&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>NAVER DEVIEW 2021: Large scale multi-tenant secure Hadoop cluster growth experience sharing
-&lt;ul>
-&lt;li>&lt;a href="https://deview.kr/2021/sessions/459">https://deview.kr/2021/sessions/459&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://deview.kr/data/deview/session/attach/10_%EC%B4%88%EB%8C%80%EC%9A%A9%EB%9F%89%20%EB%A9%80%ED%8B%B0%ED%85%8C%EB%84%8C%ED%8A%B8%20%EC%8B%9C%ED%81%90%EC%96%B4%20%ED%95%98%EB%91%A1%20%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%20%EC%84%B1%EC%9E%A5%ED%86%B5%20%EA%B2%BD%ED%97%98%EA%B8%B0.pdf">https://deview.kr/data/deview/session/attach/10_%EC%B4%88%EB%8C%80%EC%9A%A9%EB%9F%89%20%EB%A9%80%ED%8B%B0%ED%85%8C%EB%84%8C%ED%8A%B8%20%EC%8B%9C%ED%81%90%EC%96%B4%20%ED%95%98%EB%91%A1%20%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%20%EC%84%B1%EC%9E%A5%ED%86%B5%20%EA%B2%BD%ED%97%98%EA%B8%B0.pdf&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://tv.naver.com/v/23650574">https://tv.naver.com/v/23650574&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>NAVER DEVIEW 2017: Advanced Experiences in Multi-tenant Hadoop Cluster Operation
-&lt;ul>
-&lt;li>&lt;a href="https://deview.kr/2017/schedule/193?lang=en">https://deview.kr/2017/schedule/193?lang=en&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.slideshare.net/deview/234-80881396">https://www.slideshare.net/deview/234-80881396&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://tv.naver.com/v/2297124">https://tv.naver.com/v/2297124&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>About "HADOOP_CLASSPATH" environment variable</title><link>https://eubnara.github.io/computer-science/hadoop/hadoop-classpath/</link><pubDate>Sun, 05 Feb 2023 16:54:58 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/hadoop-classpath/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/UnixShellGuide.html#HADOOP_CLASSPATH"&gt;https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/UnixShellGuide.html#HADOOP_CLASSPATH&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In Hadoop ecosystem, &lt;code&gt;HADOOP_CLASSPATH&lt;/code&gt; environment variable is commonly used in many places. &lt;code&gt;Hive&lt;/code&gt; is use this variable, too.
+I wonder that how the &lt;code&gt;HADOOP_CLASSPATH&lt;/code&gt; variable is used in a script like &lt;code&gt;beeline&lt;/code&gt;. I cannot find &lt;code&gt;HADOOP_CLASSPATH&lt;/code&gt; variable in &lt;code&gt;Hive&lt;/code&gt; source codes.
+I finally figure out that when executing &lt;code&gt;beeline&lt;/code&gt; it uses &lt;code&gt;hadoop jar&lt;/code&gt; command. (&lt;a href="https://github.com/apache/hive/blob/rel/release-3.1.3/bin/ext/beeline.sh#L35"&gt;https://github.com/apache/hive/blob/rel/release-3.1.3/bin/ext/beeline.sh#L35&lt;/a&gt;)
+It uses &lt;code&gt;RunJar.java&lt;/code&gt; where &lt;code&gt;HADOOP_CLASSPATH&lt;/code&gt; is used to set &lt;code&gt;CLASSPATH&lt;/code&gt;. (&lt;a href="https://github.com/apache/hadoop/blob/rel/release-3.3.4/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/RunJar.java#L347-L351"&gt;https://github.com/apache/hadoop/blob/rel/release-3.3.4/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/RunJar.java#L347-L351&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;If something in Hadoop ecosystem uses &lt;code&gt;RunJar#main&lt;/code&gt;, it probably repect &lt;code&gt;HADOOP_CLASSPATH&lt;/code&gt; environment variable.&lt;/p&gt;</description></item><item><title>SPNEGO-enabled Hadoop DataNode misjudges kerberos "replay attack".</title><link>https://eubnara.github.io/computer-science/hadoop/spnego-request-is-a-replay/</link><pubDate>Sun, 05 Feb 2023 16:01:17 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/spnego-request-is-a-replay/</guid><description>&lt;ul&gt;
+&lt;li&gt;references
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.cloudera.com/cloudera-manager/7.5.5/security-troubleshooting/cm-security-troubleshooting.pdf"&gt;https://docs.cloudera.com/cloudera-manager/7.5.5/security-troubleshooting/cm-security-troubleshooting.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://search-guard.com/elasticsearch-kibana-kerberos/"&gt;https://search-guard.com/elasticsearch-kibana-kerberos/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I guess that this is caused by sharing the same kerberos keytab (&lt;code&gt;/etc/security/keytabs/spnego.service.keytab&lt;/code&gt;) and principal(&lt;code&gt;HTTP/_HOST@{REALM}&lt;/code&gt;) among Hadoop daemons (NameNode, DataNode, JournalNodes, ResourceManager, NodeManager &amp;hellip;). I assume that DataNode misjudges it is a replay attack in certain circumstances.&lt;/p&gt;
+&lt;p&gt;Adding the following jvm system properties to Hadoop daemons will fix this issue as a workaround. It means java process will not use replay cache.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;-Dsun.security.krb5.rcache=none
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>About me</title><link>https://eubnara.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eubnara.github.io/about/</guid><description>&lt;p&gt;My name is Yubi Lee.&lt;br&gt;
+I work as a Data Engineer.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;email: &lt;a href="mailto:eubnara@gmail.com"&gt;eubnara@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;github: &lt;a href="https://github.com/eubnara"&gt;https://github.com/eubnara&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;linkedin: &lt;a href="https://kr.linkedin.com/in/yubi-lee-40a158130"&gt;https://kr.linkedin.com/in/yubi-lee-40a158130&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="open-source-contribution"&gt;Open source contribution&lt;/h1&gt;
+&lt;h2 id="hadoop"&gt;Hadoop&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-17655"&gt;HDFS-17655&lt;/a&gt;: Cannot run HDFS balancer with BlockPlacementPolicyWithNodeGroup&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-19319"&gt;HADOOP-19319&lt;/a&gt;: configurationChangeMonitor is not properly set on HttpServer2&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18806"&gt;HADOOP-18806&lt;/a&gt;: Document missing property (ipc.server.read.threadpool.size) in core-default.xml&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18666"&gt;HADOOP-18666&lt;/a&gt;: A whitelist of endpoints to skip Kerberos authentication doesn&amp;rsquo;t work for ResourceManager and Job History Server&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-16883"&gt;HDFS-16883&lt;/a&gt;: fix duplicate field name in hdfs-default.xml&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18585"&gt;HADOOP-18585&lt;/a&gt;: DataNode&amp;rsquo;s internal infoserver redirects with http scheme, not https when https enabled.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18398"&gt;HADOOP-18398&lt;/a&gt;: Prevent AvroRecord*.class from being included non-test jar&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18087"&gt;HADOOP-18087&lt;/a&gt;: fix bugs when looking up record from upstream DNS servers.
+&lt;ul&gt;
+&lt;li&gt;When query A record which is chained by CNAME, YARN Registry DNS Server does not properly respond. Some CNAME records are missing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-17861"&gt;HADOOP-17861&lt;/a&gt;: improve YARN Registry DNS Server qps&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-13259"&gt;HDFS-13259&lt;/a&gt;: fix file preview bug in NameNode UI&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-13260"&gt;HDFS-13260&lt;/a&gt;: fix guide about HA with QJM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-hbase"&gt;Apache HBase&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HBASE-28911"&gt;HBASE-28911&lt;/a&gt;: Automatic SSL keystore reloading for HttpServer&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HBASE-28816"&gt;HBASE-28816&lt;/a&gt;: The description of &amp;ldquo;hbase.superuser&amp;rdquo; is confusing&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HBASE-28294"&gt;HBASE-28294&lt;/a&gt;: Support to skip Kerberos authentication for metric endpoints&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-phoenix"&gt;Apache Phoenix&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/PHOENIX-7635"&gt;PHOENIX-7635&lt;/a&gt;: Update Connectors to use Spark 3.5.6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-hive"&gt;Apache Hive&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HIVE-28739"&gt;HIVE-28739&lt;/a&gt;: support restricting users to create deferred view&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-bigtop"&gt;Apache Bigtop&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/BIGTOP-3906"&gt;BIGTOP-3906&lt;/a&gt;: Wrapper script for hive sources wrong default file&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/BIGTOP-3850"&gt;BIGTOP-3850&lt;/a&gt;: fix conflict when installing ranger-hdfs-plugin and ranger-yarn-plugin on the same machine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-ambari"&gt;Apache Ambari&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26533"&gt;AMBARI-26533&lt;/a&gt;: Ranger Admin Restart Deletes JDBC JAR When Installed on Same Host as Ambari Server&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26312"&gt;AMBARI-26312&lt;/a&gt;: Clean up RequestScheduleEntity and RequestScheduleBatchRequestEntity also&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26311"&gt;AMBARI-26311&lt;/a&gt;: postgresql-server should be installed even though ambari-server is configured with mysql&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26075"&gt;AMBARI-26075&lt;/a&gt;: Wrong datanode pid file when security enabled and unprivileged port is used&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25891"&gt;AMBARI-25891&lt;/a&gt;: Enhancements when regenerating keytabs and changing Kerberos configurations&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25797"&gt;AMBARI-25797&lt;/a&gt;: Fail to add a component on the same machine with ambari-server of a new service with no kerberos identity when kerberos enabled&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25788"&gt;AMBARI-25788&lt;/a&gt;: Ambari server keeps generating keytabs even with KerberosServerAction#OperationType.CREATE_MISSING option.&lt;/li&gt;
+&lt;li&gt;AMBARI-25624: optimize creating kerberos keytab
+&lt;ul&gt;
+&lt;li&gt;branch-2.7: &lt;a href="https://github.com/apache/ambari/pull/3353"&gt;https://github.com/apache/ambari/pull/3353&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;trunk: &lt;a href="https://github.com/apache/ambari/pull/3588"&gt;https://github.com/apache/ambari/pull/3588&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25720"&gt;AMBARI-25720&lt;/a&gt;: Support Apache Directory Server&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25719"&gt;AMBARI-25719&lt;/a&gt;: Fix bug when enabling kerberos in Ambari 2.7.6
+&lt;ul&gt;
+&lt;li&gt;trunk: &lt;a href="https://github.com/apache/ambari/pull/3589"&gt;https://github.com/apache/ambari/pull/3589&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25619"&gt;AMBARI-25619&lt;/a&gt;: improve &amp;ldquo;Prepare delete identities&amp;rdquo; process when deleting component in host in kerberized cluster&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25422"&gt;AMBARI-25422&lt;/a&gt;: optimize loading the first page for Ambari UI&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25491"&gt;AMBARI-25491&lt;/a&gt;: newline characters are ignored on custom property in Ambari Web editor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-ranger"&gt;Apache Ranger&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-5110"&gt;RANGER-5110&lt;/a&gt;: Update the FQDN of users and groups whenever it changes&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-4887"&gt;RANGER-4887&lt;/a&gt;: Change default configuration values for column masking and row-level filtering on hive policy&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-4886"&gt;RANGER-4886&lt;/a&gt;: do not Html-escape for user, group and role name&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-4418"&gt;RANGER-4418&lt;/a&gt;: Upgrade hadoop version and use shaded hadoop client artifacts&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-4247"&gt;RANGER-4247&lt;/a&gt;: auditPolicyEvaluators should be set before logging it&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-4236"&gt;RANGER-4236&lt;/a&gt;: enhance Ranger JSON audit to HDFS by compressing as gzip&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-4068"&gt;RANGER-4068&lt;/a&gt;: fix error caused by missing dnsjava library&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-3924"&gt;RANGER-3924&lt;/a&gt;: fix unnecessary sync caused by incremeting timestamp value typo&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-3858"&gt;RANGER-3858&lt;/a&gt;: On dev-support, service creation and ranger-kafka-plugin setup are failed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-spark"&gt;Apache Spark&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/SPARK-44976"&gt;SPARK-44976&lt;/a&gt;: Utils.getCurrentUserName should return the full principal name&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/SPARK-40964"&gt;SPARK-40964&lt;/a&gt;: (TBD) Cannot run spark history server with shaded hadoop jar&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/SPARK-40072"&gt;SPARK-40072&lt;/a&gt;: fix build failure when using &lt;code&gt;make-distributions.sh&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-impala"&gt;Apache Impala&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13413"&gt;IMPALA-13413&lt;/a&gt;: num_cores flag does not work.
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gerrit.cloudera.org/#/c/23333/"&gt;https://gerrit.cloudera.org/#/c/23333/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13696"&gt;IMPALA-13696&lt;/a&gt;: Exclude conflicting JAX-RS libraries
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gerrit.cloudera.org/#/c/22394/"&gt;https://gerrit.cloudera.org/#/c/22394/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-9170"&gt;IMPALA-9170&lt;/a&gt;: close idle connections without an associated session&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13327"&gt;IMPALA-13327&lt;/a&gt;: bin/bootstrap_toolchain.py always download hbase-2.6.0-hadoop3-bin.tar.gz when USE_APACHE_COMPONENTS=true&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13311"&gt;IMPALA-13311&lt;/a&gt;: Hive3 INSERT failed by ClassNotFoundException: org.apache.tez.runtime.api.Event
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gerrit.cloudera.org/#/c/21706/"&gt;https://gerrit.cloudera.org/#/c/21706/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13023"&gt;IMPALA-13023&lt;/a&gt;: support webserver ldap filter when using spnego
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gerrit.cloudera.org/#/c/21339/"&gt;https://gerrit.cloudera.org/#/c/21339/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-10408"&gt;IMPALA-10408&lt;/a&gt;: Support Apache components to build Apache Impala to reduce dependencies of CDH or CDP
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gerrit.cloudera.org/#/c/18977/"&gt;https://gerrit.cloudera.org/#/c/18977/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-kudu"&gt;Apache KUDU&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/KUDU-3549"&gt;https://issues.apache.org/jira/browse/KUDU-3549&lt;/a&gt;: String gauge exposed in prometheus format&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="cloudera-hue"&gt;Cloudera HUE&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cloudera/hue/pull/1134"&gt;https://github.com/cloudera/hue/pull/1134&lt;/a&gt; (not merged): fix bug in handling &lt;code&gt;+&lt;/code&gt; character in filebrowser&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cloudera/hue/pull/1135"&gt;https://github.com/cloudera/hue/pull/1135&lt;/a&gt;: fix bug in substituting &lt;code&gt;liboozie.remote_deployement_dir&lt;/code&gt; variable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-zeppelin"&gt;Apache Zeppelin&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/ZEPPELIN-5594"&gt;ZEPPELIN-5594&lt;/a&gt;: HDFS file id should be read as &amp;ldquo;long&amp;rdquo;, not &amp;ldquo;int&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-avro"&gt;Apache Avro&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AVRO-3877"&gt;AVRO-3877&lt;/a&gt;: [doc] fix wrong configuration for avro-maven-plugin in java example&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="krb5"&gt;KRB5&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/krb5/krb5/pull/1467"&gt;https://github.com/krb5/krb5/pull/1467&lt;/a&gt;: fix to rename FILE credential cache on windows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="etc"&gt;ETC&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Spring-shell
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-shell/pull/432#issuecomment-1144522860"&gt;https://github.com/spring-projects/spring-shell/pull/432#issuecomment-1144522860&lt;/a&gt;: add a feature to terminate spring-shell with &lt;code&gt;CTRL+D&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;gotty-client
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/moul/gotty-client/pull/99"&gt;https://github.com/moul/gotty-client/pull/99&lt;/a&gt;: fix disconnection caused by not handling &lt;code&gt;syscall.EINTR&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;fix basic auth. token base64 encoding
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/moul/gotty-client/pull/105"&gt;https://github.com/moul/gotty-client/pull/105&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/moul/gotty-client/pull/108"&gt;https://github.com/moul/gotty-client/pull/108&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/moul/gotty-client/pull/110"&gt;https://github.com/moul/gotty-client/pull/110&lt;/a&gt;: get password without revealing it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;react-native-cache
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/timfpark/react-native-cache/pull/25"&gt;https://github.com/timfpark/react-native-cache/pull/25&lt;/a&gt;: add a feature to support cache expiration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;discovery-zookeeper
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/naver/discovery-zookeeper"&gt;https://github.com/naver/discovery-zookeeper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;elasticsearch plugin to discovery hosts in cluster based on information in znode of Zookeeper&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;winstonjs
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/winstonjs/winston/pull/1559"&gt;https://github.com/winstonjs/winston/pull/1559&lt;/a&gt;: fix confusing log message&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="presentation"&gt;Presentation&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;TossBank SLASH24: Building a Hadoop cluster with open source
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://toss.im/slash-24/sessions/5"&gt;https://toss.im/slash-24/sessions/5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=4BcSVF4bLtU"&gt;https://www.youtube.com/watch?v=4BcSVF4bLtU&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;NAVER DEVIEW 2021: Large scale multi-tenant secure Hadoop cluster growth experience sharing
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://deview.kr/2021/sessions/459"&gt;https://deview.kr/2021/sessions/459&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://deview.kr/data/deview/session/attach/10_%EC%B4%88%EB%8C%80%EC%9A%A9%EB%9F%89%20%EB%A9%80%ED%8B%B0%ED%85%8C%EB%84%8C%ED%8A%B8%20%EC%8B%9C%ED%81%90%EC%96%B4%20%ED%95%98%EB%91%A1%20%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%20%EC%84%B1%EC%9E%A5%ED%86%B5%20%EA%B2%BD%ED%97%98%EA%B8%B0.pdf"&gt;https://deview.kr/data/deview/session/attach/10_%EC%B4%88%EB%8C%80%EC%9A%A9%EB%9F%89%20%EB%A9%80%ED%8B%B0%ED%85%8C%EB%84%8C%ED%8A%B8%20%EC%8B%9C%ED%81%90%EC%96%B4%20%ED%95%98%EB%91%A1%20%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%20%EC%84%B1%EC%9E%A5%ED%86%B5%20%EA%B2%BD%ED%97%98%EA%B8%B0.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tv.naver.com/v/23650574"&gt;https://tv.naver.com/v/23650574&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;NAVER DEVIEW 2017: Advanced Experiences in Multi-tenant Hadoop Cluster Operation
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://deview.kr/2017/schedule/193?lang=en"&gt;https://deview.kr/2017/schedule/193?lang=en&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.slideshare.net/deview/234-80881396"&gt;https://www.slideshare.net/deview/234-80881396&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tv.naver.com/v/2297124"&gt;https://tv.naver.com/v/2297124&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

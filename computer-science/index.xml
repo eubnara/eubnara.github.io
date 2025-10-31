@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Computer science on EUB's second brain</title><link>https://eubnara.github.io/computer-science/</link><description>Recent content in Computer science on EUB's second brain</description><generator>Hugo -- 0.148.2</generator><language>en-us</language><lastBuildDate>Sat, 21 Jun 2025 15:13:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/computer-science/index.xml" rel="self" type="application/rss+xml"/><item><title>Proxy repository for cargo/rust</title><link>https://eubnara.github.io/computer-science/rust/cargo_repository_proxy/</link><pubDate>Sat, 21 Jun 2025 15:13:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/rust/cargo_repository_proxy/</guid><description>&lt;h1 id="sonatype-nexus-community-edition-사용-예">Sonatype Nexus community edition 사용 예&lt;/h1>
-&lt;ul>
-&lt;li>3.77 이상의 버전을 써야 ce 버전에서도 cargo repository 를 쓸 수 있다. 단, 3.77 버전부터는 사용량 hard limit 이 존재하게 된다. 다음 명령으로 간단히 로컬에 구동&lt;/li>
-&lt;/ul>
-&lt;pre tabindex="0">&lt;code>docker run -d -p 8081:8081 --name nexus sonatype/nexus3
-&lt;/code>&lt;/pre>&lt;ul>
-&lt;li>&lt;code>cargo-proxy&lt;/code> 로 repository 를 만들었다고 가정, remote url 은 &lt;code>https://index.crates.io&lt;/code> 로 한다.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img alt="nexus" loading="lazy" src="https://eubnara.github.io/images/computer-science/rust/cargo_repository_proxy/nexus.png">&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>.cargo/config.toml&lt;/code> 에 다음과 같이 내용 추가.&lt;/li>
-&lt;/ul>
-&lt;pre tabindex="0">&lt;code>❯ cat .cargo/config.toml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Computer science on EUB's second brain</title><link>https://eubnara.github.io/computer-science/</link><description>Recent content in Computer science on EUB's second brain</description><generator>Hugo -- 0.152.2</generator><language>en-us</language><lastBuildDate>Sat, 21 Jun 2025 15:13:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/computer-science/index.xml" rel="self" type="application/rss+xml"/><item><title>Proxy repository for cargo/rust</title><link>https://eubnara.github.io/computer-science/rust/cargo_repository_proxy/</link><pubDate>Sat, 21 Jun 2025 15:13:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/rust/cargo_repository_proxy/</guid><description>&lt;h1 id="sonatype-nexus-community-edition-사용-예"&gt;Sonatype Nexus community edition 사용 예&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;3.77 이상의 버전을 써야 ce 버전에서도 cargo repository 를 쓸 수 있다. 단, 3.77 버전부터는 사용량 hard limit 이 존재하게 된다. 다음 명령으로 간단히 로컬에 구동&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker run -d -p 8081:8081 --name nexus sonatype/nexus3
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cargo-proxy&lt;/code&gt; 로 repository 를 만들었다고 가정, remote url 은 &lt;code&gt;https://index.crates.io&lt;/code&gt; 로 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="nexus" loading="lazy" src="https://eubnara.github.io/images/computer-science/rust/cargo_repository_proxy/nexus.png"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.cargo/config.toml&lt;/code&gt; 에 다음과 같이 내용 추가.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;❯ cat .cargo/config.toml
 [registries.nexus]
 index = &amp;#34;sparse+http://localhost:8081/repository/cargo-proxy/&amp;#34;
 [registry]
@@ -19,5 +19,5 @@ default = &amp;#34;nexus&amp;#34;
 replace-with = &amp;#34;nexus&amp;#34;
 [source.nexus]
 registry = &amp;#34;sparse+http://localhost:8081/repository/cargo-proxy/&amp;#34;
-&lt;/code>&lt;/pre>&lt;p>&lt;a href="https://index.crates.io/">https://index.crates.io/&lt;/a> 에 써있는 설명을 보니 &lt;code>sparse&lt;/code> 프로토콜을 쓰는 것 같다. 위에 config.toml 에서도 &lt;code>sparse+&lt;/code> 를 빼먹으면 정상동작하지 않는다.
-&lt;img alt="index_crates_io" loading="lazy" src="https://eubnara.github.io/images/computer-science/rust/cargo_repository_proxy/index_crates_io.png">&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href="https://index.crates.io/"&gt;https://index.crates.io/&lt;/a&gt; 에 써있는 설명을 보니 &lt;code&gt;sparse&lt;/code&gt; 프로토콜을 쓰는 것 같다. 위에 config.toml 에서도 &lt;code&gt;sparse+&lt;/code&gt; 를 빼먹으면 정상동작하지 않는다.
+&lt;img alt="index_crates_io" loading="lazy" src="https://eubnara.github.io/images/computer-science/rust/cargo_repository_proxy/index_crates_io.png"&gt;&lt;/p&gt;</description></item></channel></rss>

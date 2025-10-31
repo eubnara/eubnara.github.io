@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Zookeeper on EUB's second brain</title><link>https://eubnara.github.io/tags/zookeeper/</link><description>Recent content in Zookeeper on EUB's second brain</description><generator>Hugo -- 0.148.2</generator><language>en-us</language><lastBuildDate>Sat, 25 May 2024 22:34:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/tags/zookeeper/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoring metrics related to "jute.maxbuffer"</title><link>https://eubnara.github.io/computer-science/hadoop/monitoring-jute.maxbuffer/</link><pubDate>Sat, 25 May 2024 22:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/monitoring-jute.maxbuffer/</guid><description>&lt;p>There is a configuration named as &amp;ldquo;jute.maxbuffer&amp;rdquo; when using zookeeper. This can be set on zookeeper client side or server side. On zookeeper client side, the setting should be lower than that on zookeeper server.
-If a client gets data bigger than the setting, it will get an error.&lt;/p>
-&lt;p>There are some related issue.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/HIVE-21993">https://issues.apache.org/jira/browse/HIVE-21993&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://issues.apache.org/jira/browse/YARN-2962">https://issues.apache.org/jira/browse/YARN-2962&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>In order to avoid this errors. Some metrics should be monitored on zookeeper.&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>last_client_response_size&lt;/code> or &lt;code>max_client_response_size&lt;/code>
-&lt;ul>
-&lt;li>&lt;code>client_response_size&lt;/code> is a response size in bytes from zookeeper server to client.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;code>last_proposal_size&lt;/code> or &lt;code>max_proposal_size&lt;/code>
-&lt;ul>
-&lt;li>&lt;code>proposal_size&lt;/code> is a proposal size in bytes from zookeeper server leader to follower.&lt;/li>
-&lt;li>&lt;code>proposal&lt;/code>?: refer to &lt;a href="https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html">https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;p>These values should be lower than &lt;code>jute.maxbuffer&lt;/code>. This setting can be set through jvm argument like &lt;code>-Djute.maxbuffer=10485760&lt;/code> (10mb).&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Zookeeper on EUB's second brain</title><link>https://eubnara.github.io/tags/zookeeper/</link><description>Recent content in Zookeeper on EUB's second brain</description><generator>Hugo -- 0.152.2</generator><language>en-us</language><lastBuildDate>Sat, 25 May 2024 22:34:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/tags/zookeeper/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoring metrics related to "jute.maxbuffer"</title><link>https://eubnara.github.io/computer-science/hadoop/monitoring-jute.maxbuffer/</link><pubDate>Sat, 25 May 2024 22:34:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/hadoop/monitoring-jute.maxbuffer/</guid><description>&lt;p&gt;There is a configuration named as &amp;ldquo;jute.maxbuffer&amp;rdquo; when using zookeeper. This can be set on zookeeper client side or server side. On zookeeper client side, the setting should be lower than that on zookeeper server.
+If a client gets data bigger than the setting, it will get an error.&lt;/p&gt;
+&lt;p&gt;There are some related issue.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HIVE-21993"&gt;https://issues.apache.org/jira/browse/HIVE-21993&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/YARN-2962"&gt;https://issues.apache.org/jira/browse/YARN-2962&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In order to avoid this errors. Some metrics should be monitored on zookeeper.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;last_client_response_size&lt;/code&gt; or &lt;code&gt;max_client_response_size&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;client_response_size&lt;/code&gt; is a response size in bytes from zookeeper server to client.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;last_proposal_size&lt;/code&gt; or &lt;code&gt;max_proposal_size&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;proposal_size&lt;/code&gt; is a proposal size in bytes from zookeeper server leader to follower.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;proposal&lt;/code&gt;?: refer to &lt;a href="https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html"&gt;https://zookeeper.apache.org/doc/r3.7.1/zookeeperInternals.html&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These values should be lower than &lt;code&gt;jute.maxbuffer&lt;/code&gt;. This setting can be set through jvm argument like &lt;code&gt;-Djute.maxbuffer=10485760&lt;/code&gt; (10mb).&lt;/p&gt;</description></item></channel></rss>
