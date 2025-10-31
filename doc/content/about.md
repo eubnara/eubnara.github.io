@@ -121,6 +121,10 @@ I work as a Data Engineer.
 
 - [AVRO-3877](https://issues.apache.org/jira/browse/AVRO-3877): [doc] fix wrong configuration for avro-maven-plugin in java example
 
+## KRB5
+
+- https://github.com/krb5/krb5/pull/1467: fix to rename FILE credential cache on windows
+
 ## ETC
 
 - Spring-shell
