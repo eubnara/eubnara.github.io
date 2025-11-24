@@ -144,6 +144,13 @@ I work as a Data Engineer.
 - winstonjs
   - [https://github.com/winstonjs/winston/pull/1559](https://github.com/winstonjs/winston/pull/1559): fix confusing log message
 
+
+---
+# Open source communication
+
+- [apache/iceberg#10181](https://github.com/apache/iceberg/issues/10181#issuecomment-3568634698): How to avoid partition key sorting when inserting data into a partitioned Iceberg table?
+
+
 ---
 
 # Presentation
