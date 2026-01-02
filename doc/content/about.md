@@ -19,6 +19,7 @@ I work as a Data Engineer.
 
 ## Hadoop
 
+- [HDFS-17868](https://issues.apache.org/jira/browse/HDFS-17868): introduce BlockPlacementPolicyCrossDC for multi datacenter stretched hdfs cluster
 - [HDFS-17655](https://issues.apache.org/jira/browse/HDFS-17655): Cannot run HDFS balancer with BlockPlacementPolicyWithNodeGroup
 - [HADOOP-19319](https://issues.apache.org/jira/browse/HADOOP-19319): configurationChangeMonitor is not properly set on HttpServer2
 - [HADOOP-18806](https://issues.apache.org/jira/browse/HADOOP-18806): Document missing property (ipc.server.read.threadpool.size) in core-default.xml
