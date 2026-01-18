@@ -149,6 +149,7 @@ I work as a Data Engineer.
 ---
 # Open source communication
 
+- [TeamNewPipe/NewPipe#9710](https://github.com/TeamNewPipe/NewPipe/issues/9710#issuecomment-3764631972): NewPipe Android audio ducking problem
 - [apache/iceberg#10181](https://github.com/apache/iceberg/issues/10181#issuecomment-3568634698): How to avoid partition key sorting when inserting data into a partitioned Iceberg table?
 
 
