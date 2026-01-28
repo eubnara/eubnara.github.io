@@ -285,6 +285,11 @@ I work as a Data Engineer.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://github.com/apache/iceberg/issues/10181#issuecomment-3568634698"&gt;apache/iceberg#10181&lt;/a&gt;: How to avoid partition key sorting when inserting data into a partitioned Iceberg table?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
+&lt;h1 id="translation"&gt;Translation&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://rtd-hadoop-security.readthedocs.io/ko/latest/kerberos.html"&gt;The Kerberos Protocol And Its Implementations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
 &lt;h1 id="presentation"&gt;Presentation&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;TossBank SLASH24: Building a Hadoop cluster with open source
