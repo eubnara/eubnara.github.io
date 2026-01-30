@@ -19,6 +19,7 @@ I work as a Data Engineer.
 
 ## Hadoop
 
+- [HDFS-17877](https://issues.apache.org/jira/browse/HDFS-17877): DatanodeID.updateRegInfo() does not update hostNameBytes causing stale hostname on client
 - [HDFS-17868](https://issues.apache.org/jira/browse/HDFS-17868): introduce BlockPlacementPolicyCrossDC for multi datacenter stretched hdfs cluster
 - [HDFS-17655](https://issues.apache.org/jira/browse/HDFS-17655): Cannot run HDFS balancer with BlockPlacementPolicyWithNodeGroup
 - [HADOOP-19319](https://issues.apache.org/jira/browse/HADOOP-19319): configurationChangeMonitor is not properly set on HttpServer2
