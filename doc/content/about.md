@@ -130,6 +130,8 @@ I work as a Data Engineer.
 
 ## ETC
 
+- NewPipe
+  - [https://github.com/TeamNewPipe/NewPipe/pull/13169](https://github.com/TeamNewPipe/NewPipe/pull/13169): Fix audio ducking issue by using Android's automatic audio focus management
 - Spring-shell
   - [https://github.com/spring-projects/spring-shell/pull/432#issuecomment-1144522860](https://github.com/spring-projects/spring-shell/pull/432#issuecomment-1144522860): add a feature to terminate spring-shell with `CTRL+D`
 - gotty-client
