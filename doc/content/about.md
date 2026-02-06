@@ -117,6 +117,7 @@ I work as a Data Engineer.
 
 ## Apache Zeppelin
 
+- [ZEPPELIN-6396](https://issues.apache.org/jira/browse/ZEPPELIN-6396): Separate restart all interpreters into a dedicated endpoint
 - [ZEPPELIN-5594](https://issues.apache.org/jira/browse/ZEPPELIN-5594): HDFS file id should be read as "long", not "int".
 
 
