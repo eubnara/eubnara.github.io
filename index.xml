@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>EUB's second brain</title><link>https://eubnara.github.io/</link><description>Recent content on EUB's second brain</description><generator>Hugo -- 0.155.1</generator><language>en-us</language><lastBuildDate>Sat, 21 Jun 2025 15:13:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Proxy repository for cargo/rust</title><link>https://eubnara.github.io/computer-science/rust/cargo_repository_proxy/</link><pubDate>Sat, 21 Jun 2025 15:13:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/rust/cargo_repository_proxy/</guid><description>&lt;h1 id="sonatype-nexus-community-edition-사용-예"&gt;Sonatype Nexus community edition 사용 예&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>EUB's second brain</title><link>https://eubnara.github.io/</link><description>Recent content on EUB's second brain</description><generator>Hugo -- 0.155.2</generator><language>en-us</language><lastBuildDate>Sat, 21 Jun 2025 15:13:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Proxy repository for cargo/rust</title><link>https://eubnara.github.io/computer-science/rust/cargo_repository_proxy/</link><pubDate>Sat, 21 Jun 2025 15:13:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/rust/cargo_repository_proxy/</guid><description>&lt;h1 id="sonatype-nexus-community-edition-사용-예"&gt;Sonatype Nexus community edition 사용 예&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;3.77 이상의 버전을 써야 ce 버전에서도 cargo repository 를 쓸 수 있다. 단, 3.77 버전부터는 사용량 hard limit 이 존재하게 된다. 다음 명령으로 간단히 로컬에 구동&lt;/li&gt;
 &lt;/ul&gt;
@@ -233,6 +233,7 @@ I work as a Data Engineer.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h2 id="apache-zeppelin"&gt;Apache Zeppelin&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/ZEPPELIN-6396"&gt;ZEPPELIN-6396&lt;/a&gt;: Separate restart all interpreters into a dedicated endpoint&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/ZEPPELIN-5594"&gt;ZEPPELIN-5594&lt;/a&gt;: HDFS file id should be read as &amp;ldquo;long&amp;rdquo;, not &amp;ldquo;int&amp;rdquo;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="apache-avro"&gt;Apache Avro&lt;/h2&gt;
