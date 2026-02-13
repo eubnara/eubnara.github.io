@@ -19,6 +19,7 @@ I work as a Data Engineer.
 
 ## Hadoop
 
+- [HDFS-17883](https://issues.apache.org/jira/browse/HDFS-17883): dfs.net.topology.impl should be respected when dfs.use.dfs.network.topology=true
 - [HDFS-17877](https://issues.apache.org/jira/browse/HDFS-17877): DatanodeID.updateRegInfo() does not update hostNameBytes causing stale hostname on client
 - [HDFS-17868](https://issues.apache.org/jira/browse/HDFS-17868): introduce BlockPlacementPolicyCrossDC for multi datacenter stretched hdfs cluster
 - [HDFS-17655](https://issues.apache.org/jira/browse/HDFS-17655): Cannot run HDFS balancer with BlockPlacementPolicyWithNodeGroup
