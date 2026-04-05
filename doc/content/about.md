@@ -132,6 +132,8 @@ I work as a Data Engineer.
 
 ## ETC
 
+- ansible
+  - [https://github.com/ansible/ansible/pull/86777](https://github.com/ansible/ansible/pull/86777): Fix --start-at-task silently skipping all tasks after the first
 - NewPipe
   - [https://github.com/TeamNewPipe/NewPipe/pull/13169](https://github.com/TeamNewPipe/NewPipe/pull/13169): Fix audio ducking issue by using Android's automatic audio focus management
 - Spring-shell
