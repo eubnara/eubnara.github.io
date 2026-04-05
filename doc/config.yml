@@ -4,6 +4,8 @@ title: "EUB's second brain"
 theme: 'PaperMod'
 
 params:
+  author:
+    name: eubnara
   comments: true
   env: production
   social: true
