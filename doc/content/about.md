@@ -57,6 +57,7 @@ I work as a Data Engineer.
 
 ## Apache Ambari
 
+- [AMBARI-26598](https://issues.apache.org/jira/browse/AMBARI-26598): Don't execute dangerous metatool command when starting hiveserver2
 - [AMBARI-26555](https://issues.apache.org/jira/browse/AMBARI-26555): Password leaked for configurations at stack root (e.g. cluster-env.xml)
 - [AMBARI-26533](https://issues.apache.org/jira/browse/AMBARI-26533): Ranger Admin Restart Deletes JDBC JAR When Installed on Same Host as Ambari Server
 - [AMBARI-26312](https://issues.apache.org/jira/browse/AMBARI-26312): Clean up RequestScheduleEntity and RequestScheduleBatchRequestEntity also
