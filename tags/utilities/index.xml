@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Utilities on EUB's second brain</title><link>https://eubnara.github.io/tags/utilities/</link><description>Recent content in Utilities on EUB's second brain</description><generator>Hugo -- 0.162.1</generator><language>en-us</language><lastBuildDate>Sun, 31 May 2026 10:00:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/tags/utilities/index.xml" rel="self" type="application/rss+xml"/><item><title>toolbox: A collection of DIY utilities</title><link>https://eubnara.github.io/tools/toolbox-intro/</link><pubDate>Sun, 31 May 2026 10:00:00 +0900</pubDate><guid>https://eubnara.github.io/tools/toolbox-intro/</guid><description>&lt;p&gt;&lt;a href="https://github.com/eubnara/toolbox"&gt;toolbox&lt;/a&gt; is a collection of miscellaneous utilities I built to enhance my Linux desktop/laptop environment.
+Each tool lives in its own directory with its own README and install script.&lt;/p&gt;
+&lt;p&gt;Currently available tools:&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="charger-watts"&gt;&lt;a href="https://github.com/eubnara/toolbox/tree/main/charger-watts"&gt;charger-watts&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Displays the negotiated wattage of a connected USB-C PD charger via CLI and a KDE Plasma 6 panel widget.
+Reads the &lt;code&gt;HWAT&lt;/code&gt; field directly from the ThinkPad Embedded Controller via the &lt;code&gt;ec_sys&lt;/code&gt; module, with a fallback to UCSI sysfs for non-ThinkPad machines.
+The Plasma widget is event-driven — it reads the EC only when a charger is plugged or unplugged, with no polling.&lt;/p&gt;</description></item></channel></rss>
