@@ -26,7 +26,7 @@ languages:
           url: about
           weight: 1
         - name: Archive
-          url: archives
+          url: archive
           weight: 2
         - name: Search
           url: search/
@@ -46,21 +46,21 @@ languages:
     weight: 2
     menu:
       main:
-        - name: 소개
+        - name: About
           url: about
           weight: 1
-        - name: 글모음
-          url: archives
+        - name: Archive
+          url: archive
           weight: 2
-        - name: 검색
+        - name: Search
           url: search/
           weight: 3
         - identifier: categories
-          name: 분류
+          name: categories
           url: /categories/
           weight: 4
         - identifier: tags
-          name: 태그
+          name: tags
           url: /tags/
           weight: 5
 
