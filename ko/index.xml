@@ -26,9 +26,7 @@ default = &amp;#34;nexus&amp;#34;
 replace-with = &amp;#34;nexus&amp;#34;
 [source.nexus]
 registry = &amp;#34;sparse+http://localhost:8081/repository/cargo-proxy/&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href="https://index.crates.io/"&gt;https://index.crates.io/&lt;/a&gt;의 설명을 보면 &lt;code&gt;sparse&lt;/code&gt; 프로토콜을 사용한다. 위 config.toml에서 &lt;code&gt;sparse+&lt;/code&gt;를 빼먹으면 정상 동작하지 않는다.&lt;/p&gt;</description></item><item><title>Don't sync privileges from ranger to hive</title><link>https://eubnara.github.io/ko/computer-science/hadoop/dont-sync-privileges-from-ranger-to-hive/</link><pubDate>Sat, 19 Oct 2024 16:26:00 +0900</pubDate><guid>https://eubnara.github.io/ko/computer-science/hadoop/dont-sync-privileges-from-ranger-to-hive/</guid><description>&lt;p&gt;When Apache Ranger is configured for authorization on Secure Hadoop cluster, Hive below 4.x.x synchronizes all the ranger hive policies to rdbms for Hive as default. It is unnecessary and make unnecessary high load on db. See &lt;a href="https://issues.apache.org/jira/browse/HIVE-25391"&gt;https://issues.apache.org/jira/browse/HIVE-25391&lt;/a&gt;. You can disable it with the configurations on HiveServer2 as follows.&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;hive.privilege.synchronizer=false
-&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Ranger에서 Hive로 권한 동기화 비활성화</title><link>https://eubnara.github.io/ko/computer-science/hadoop/dont-sync-privileges-from-ranger-to-hive/</link><pubDate>Sat, 19 Oct 2024 16:26:00 +0900</pubDate><guid>https://eubnara.github.io/ko/computer-science/hadoop/dont-sync-privileges-from-ranger-to-hive/</guid><description>&lt;p&gt;Secure Hadoop 클러스터에서 Apache Ranger로 인가를 수행할 때, Hive 4.x.x 미만 버전은 기본적으로 모든 Ranger Hive 정책을 Hive용 RDBMS에 동기화한다. 이는 불필요하며 DB에 높은 부하를 유발할 수 있다. (&lt;a href="https://issues.apache.org/jira/browse/HIVE-25391"&gt;https://issues.apache.org/jira/browse/HIVE-25391&lt;/a&gt;) HiveServer2에서 다음 설정으로 비활성화할 수 있다.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href="https://index.crates.io/"&gt;https://index.crates.io/&lt;/a&gt;의 설명을 보면 &lt;code&gt;sparse&lt;/code&gt; 프로토콜을 사용한다. 위 config.toml에서 &lt;code&gt;sparse+&lt;/code&gt;를 빼먹으면 정상 동작하지 않는다.&lt;/p&gt;</description></item><item><title>Ranger에서 Hive로 권한 동기화 비활성화</title><link>https://eubnara.github.io/ko/computer-science/hadoop/dont-sync-privileges-from-ranger-to-hive/</link><pubDate>Sat, 19 Oct 2024 16:26:00 +0900</pubDate><guid>https://eubnara.github.io/ko/computer-science/hadoop/dont-sync-privileges-from-ranger-to-hive/</guid><description>&lt;p&gt;Secure Hadoop 클러스터에서 Apache Ranger로 인가를 수행할 때, Hive 4.x.x 미만 버전은 기본적으로 모든 Ranger Hive 정책을 Hive용 RDBMS에 동기화한다. 이는 불필요하며 DB에 높은 부하를 유발할 수 있다. (&lt;a href="https://issues.apache.org/jira/browse/HIVE-25391"&gt;https://issues.apache.org/jira/browse/HIVE-25391&lt;/a&gt;) HiveServer2에서 다음 설정으로 비활성화할 수 있다.&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;hive.privilege.synchronizer=false
 &lt;/code&gt;&lt;/pre&gt;</description></item><item><title>"jute.maxbuffer" 관련 모니터링 지표</title><link>https://eubnara.github.io/ko/computer-science/hadoop/monitoring-jute.maxbuffer/</link><pubDate>Sat, 25 May 2024 22:34:00 +0900</pubDate><guid>https://eubnara.github.io/ko/computer-science/hadoop/monitoring-jute.maxbuffer/</guid><description>&lt;p&gt;ZooKeeper 사용 시 &amp;ldquo;jute.maxbuffer&amp;quot;라는 설정이 있다. ZooKeeper 클라이언트 또는 서버 측에서 설정 가능하며, 클라이언트 측 설정값은 서버 측보다 낮아야 한다.
 클라이언트가 이 설정값보다 큰 데이터를 받으면 오류가 발생한다.&lt;/p&gt;
@@ -130,4 +128,225 @@ ipc.8020.backoff.enable
 &lt;li&gt;email: &lt;a href="mailto:eubnara@gmail.com"&gt;eubnara@gmail.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;github: &lt;a href="https://github.com/eubnara"&gt;https://github.com/eubnara&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;linkedin: &lt;a href="https://kr.linkedin.com/in/yubi-lee-40a158130"&gt;https://kr.linkedin.com/in/yubi-lee-40a158130&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="오픈소스-기여"&gt;오픈소스 기여&lt;/h1&gt;
+&lt;h2 id="hadoop"&gt;Hadoop&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-17912"&gt;HDFS-17912&lt;/a&gt;: HttpFS: hadoop-httpfs.sh ignores HTTPFS_CONFIG when locating httpfs-env.sh&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-17883"&gt;HDFS-17883&lt;/a&gt;: dfs.net.topology.impl should be respected when dfs.use.dfs.network.topology=true&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-17877"&gt;HDFS-17877&lt;/a&gt;: DatanodeID.updateRegInfo() does not update hostNameBytes causing stale hostname on client&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-17868"&gt;HDFS-17868&lt;/a&gt;: introduce BlockPlacementPolicyCrossDC for multi datacenter stretched hdfs cluster&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-17655"&gt;HDFS-17655&lt;/a&gt;: Cannot run HDFS balancer with BlockPlacementPolicyWithNodeGroup&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-19319"&gt;HADOOP-19319&lt;/a&gt;: configurationChangeMonitor is not properly set on HttpServer2&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18806"&gt;HADOOP-18806&lt;/a&gt;: Document missing property (ipc.server.read.threadpool.size) in core-default.xml&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18666"&gt;HADOOP-18666&lt;/a&gt;: A whitelist of endpoints to skip Kerberos authentication doesn&amp;rsquo;t work for ResourceManager and Job History Server&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-16883"&gt;HDFS-16883&lt;/a&gt;: fix duplicate field name in hdfs-default.xml&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18585"&gt;HADOOP-18585&lt;/a&gt;: DataNode&amp;rsquo;s internal infoserver redirects with http scheme, not https when https enabled.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18398"&gt;HADOOP-18398&lt;/a&gt;: Prevent AvroRecord*.class from being included non-test jar&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-18087"&gt;HADOOP-18087&lt;/a&gt;: fix bugs when looking up record from upstream DNS servers.
+&lt;ul&gt;
+&lt;li&gt;When query A record which is chained by CNAME, YARN Registry DNS Server does not properly respond. Some CNAME records are missing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HADOOP-17861"&gt;HADOOP-17861&lt;/a&gt;: improve YARN Registry DNS Server qps&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-13259"&gt;HDFS-13259&lt;/a&gt;: fix file preview bug in NameNode UI&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-13260"&gt;HDFS-13260&lt;/a&gt;: fix guide about HA with QJM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-hbase"&gt;Apache HBase&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HBASE-28911"&gt;HBASE-28911&lt;/a&gt;: Automatic SSL keystore reloading for HttpServer&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HBASE-28816"&gt;HBASE-28816&lt;/a&gt;: The description of &amp;ldquo;hbase.superuser&amp;rdquo; is confusing&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HBASE-28294"&gt;HBASE-28294&lt;/a&gt;: Support to skip Kerberos authentication for metric endpoints&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-phoenix"&gt;Apache Phoenix&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/PHOENIX-7635"&gt;PHOENIX-7635&lt;/a&gt;: Update Connectors to use Spark 3.5.6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-hive"&gt;Apache Hive&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HIVE-28739"&gt;HIVE-28739&lt;/a&gt;: support restricting users to create deferred view&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-bigtop"&gt;Apache Bigtop&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/BIGTOP-3906"&gt;BIGTOP-3906&lt;/a&gt;: Wrapper script for hive sources wrong default file&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/BIGTOP-3850"&gt;BIGTOP-3850&lt;/a&gt;: fix conflict when installing ranger-hdfs-plugin and ranger-yarn-plugin on the same machine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-ambari"&gt;Apache Ambari&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26598"&gt;AMBARI-26598&lt;/a&gt;: Don&amp;rsquo;t execute dangerous metatool command when starting hiveserver2&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26555"&gt;AMBARI-26555&lt;/a&gt;: Password leaked for configurations at stack root (e.g. cluster-env.xml)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26533"&gt;AMBARI-26533&lt;/a&gt;: Ranger Admin Restart Deletes JDBC JAR When Installed on Same Host as Ambari Server&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26312"&gt;AMBARI-26312&lt;/a&gt;: Clean up RequestScheduleEntity and RequestScheduleBatchRequestEntity also&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26311"&gt;AMBARI-26311&lt;/a&gt;: postgresql-server should be installed even though ambari-server is configured with mysql&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26075"&gt;AMBARI-26075&lt;/a&gt;: Wrong datanode pid file when security enabled and unprivileged port is used&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25891"&gt;AMBARI-25891&lt;/a&gt;: Enhancements when regenerating keytabs and changing Kerberos configurations&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25797"&gt;AMBARI-25797&lt;/a&gt;: Fail to add a component on the same machine with ambari-server of a new service with no kerberos identity when kerberos enabled&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25788"&gt;AMBARI-25788&lt;/a&gt;: Ambari server keeps generating keytabs even with KerberosServerAction#OperationType.CREATE_MISSING option.&lt;/li&gt;
+&lt;li&gt;AMBARI-25624: optimize creating kerberos keytab
+&lt;ul&gt;
+&lt;li&gt;branch-2.7: &lt;a href="https://github.com/apache/ambari/pull/3353"&gt;https://github.com/apache/ambari/pull/3353&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;trunk: &lt;a href="https://github.com/apache/ambari/pull/3588"&gt;https://github.com/apache/ambari/pull/3588&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25720"&gt;AMBARI-25720&lt;/a&gt;: Support Apache Directory Server&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25719"&gt;AMBARI-25719&lt;/a&gt;: Fix bug when enabling kerberos in Ambari 2.7.6
+&lt;ul&gt;
+&lt;li&gt;trunk: &lt;a href="https://github.com/apache/ambari/pull/3589"&gt;https://github.com/apache/ambari/pull/3589&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25619"&gt;AMBARI-25619&lt;/a&gt;: improve &amp;ldquo;Prepare delete identities&amp;rdquo; process when deleting component in host in kerberized cluster&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25422"&gt;AMBARI-25422&lt;/a&gt;: optimize loading the first page for Ambari UI&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-25491"&gt;AMBARI-25491&lt;/a&gt;: newline characters are ignored on custom property in Ambari Web editor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-ranger"&gt;Apache Ranger&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-5110"&gt;RANGER-5110&lt;/a&gt;: Update the FQDN of users and groups whenever it changes&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-4887"&gt;RANGER-4887&lt;/a&gt;: Change default configuration values for column masking and row-level filtering on hive policy&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-4886"&gt;RANGER-4886&lt;/a&gt;: do not Html-escape for user, group and role name&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-4418"&gt;RANGER-4418&lt;/a&gt;: Upgrade hadoop version and use shaded hadoop client artifacts&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-4247"&gt;RANGER-4247&lt;/a&gt;: auditPolicyEvaluators should be set before logging it&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-4236"&gt;RANGER-4236&lt;/a&gt;: enhance Ranger JSON audit to HDFS by compressing as gzip&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-4068"&gt;RANGER-4068&lt;/a&gt;: fix error caused by missing dnsjava library&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-3924"&gt;RANGER-3924&lt;/a&gt;: fix unnecessary sync caused by incremeting timestamp value typo&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/RANGER-3858"&gt;RANGER-3858&lt;/a&gt;: On dev-support, service creation and ranger-kafka-plugin setup are failed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-spark"&gt;Apache Spark&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/SPARK-44976"&gt;SPARK-44976&lt;/a&gt;: Utils.getCurrentUserName should return the full principal name&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/SPARK-40964"&gt;SPARK-40964&lt;/a&gt;: (TBD) Cannot run spark history server with shaded hadoop jar&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/SPARK-40072"&gt;SPARK-40072&lt;/a&gt;: fix build failure when using &lt;code&gt;make-distributions.sh&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-impala"&gt;Apache Impala&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13413"&gt;IMPALA-13413&lt;/a&gt;: num_cores flag does not work.
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gerrit.cloudera.org/#/c/23333/"&gt;https://gerrit.cloudera.org/#/c/23333/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13696"&gt;IMPALA-13696&lt;/a&gt;: Exclude conflicting JAX-RS libraries
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gerrit.cloudera.org/#/c/22394/"&gt;https://gerrit.cloudera.org/#/c/22394/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-9170"&gt;IMPALA-9170&lt;/a&gt;: close idle connections without an associated session&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13327"&gt;IMPALA-13327&lt;/a&gt;: bin/bootstrap_toolchain.py always download hbase-2.6.0-hadoop3-bin.tar.gz when USE_APACHE_COMPONENTS=true&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13311"&gt;IMPALA-13311&lt;/a&gt;: Hive3 INSERT failed by ClassNotFoundException: org.apache.tez.runtime.api.Event
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gerrit.cloudera.org/#/c/21706/"&gt;https://gerrit.cloudera.org/#/c/21706/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13023"&gt;IMPALA-13023&lt;/a&gt;: support webserver ldap filter when using spnego
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gerrit.cloudera.org/#/c/21339/"&gt;https://gerrit.cloudera.org/#/c/21339/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-10408"&gt;IMPALA-10408&lt;/a&gt;: Support Apache components to build Apache Impala to reduce dependencies of CDH or CDP
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gerrit.cloudera.org/#/c/18977/"&gt;https://gerrit.cloudera.org/#/c/18977/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-kudu"&gt;Apache KUDU&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/KUDU-3549"&gt;https://issues.apache.org/jira/browse/KUDU-3549&lt;/a&gt;: String gauge exposed in prometheus format&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="cloudera-hue"&gt;Cloudera HUE&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cloudera/hue/pull/1134"&gt;https://github.com/cloudera/hue/pull/1134&lt;/a&gt; (not merged): fix bug in handling &lt;code&gt;+&lt;/code&gt; character in filebrowser&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cloudera/hue/pull/1135"&gt;https://github.com/cloudera/hue/pull/1135&lt;/a&gt;: fix bug in substituting &lt;code&gt;liboozie.remote_deployement_dir&lt;/code&gt; variable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-zeppelin"&gt;Apache Zeppelin&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/ZEPPELIN-6396"&gt;ZEPPELIN-6396&lt;/a&gt;: Separate restart all interpreters into a dedicated endpoint&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/ZEPPELIN-5594"&gt;ZEPPELIN-5594&lt;/a&gt;: HDFS file id should be read as &amp;ldquo;long&amp;rdquo;, not &amp;ldquo;int&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-avro"&gt;Apache Avro&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AVRO-3877"&gt;AVRO-3877&lt;/a&gt;: [doc] fix wrong configuration for avro-maven-plugin in java example&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="krb5"&gt;KRB5&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/krb5/krb5/pull/1467"&gt;https://github.com/krb5/krb5/pull/1467&lt;/a&gt;: fix to rename FILE credential cache on windows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="etc"&gt;ETC&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ansible
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/ansible/ansible/pull/86777"&gt;https://github.com/ansible/ansible/pull/86777&lt;/a&gt;: Fix &amp;ndash;start-at-task silently skipping all tasks after the first&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;NewPipe
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/TeamNewPipe/NewPipe/pull/13169"&gt;https://github.com/TeamNewPipe/NewPipe/pull/13169&lt;/a&gt;: Fix audio ducking issue by using Android&amp;rsquo;s automatic audio focus management&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring-shell
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-shell/pull/432#issuecomment-1144522860"&gt;https://github.com/spring-projects/spring-shell/pull/432#issuecomment-1144522860&lt;/a&gt;: add a feature to terminate spring-shell with &lt;code&gt;CTRL+D&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;gotty-client
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/moul/gotty-client/pull/99"&gt;https://github.com/moul/gotty-client/pull/99&lt;/a&gt;: fix disconnection caused by not handling &lt;code&gt;syscall.EINTR&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;fix basic auth. token base64 encoding
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/moul/gotty-client/pull/105"&gt;https://github.com/moul/gotty-client/pull/105&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/moul/gotty-client/pull/108"&gt;https://github.com/moul/gotty-client/pull/108&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/moul/gotty-client/pull/110"&gt;https://github.com/moul/gotty-client/pull/110&lt;/a&gt;: get password without revealing it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;react-native-cache
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/timfpark/react-native-cache/pull/25"&gt;https://github.com/timfpark/react-native-cache/pull/25&lt;/a&gt;: add a feature to support cache expiration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;discovery-zookeeper
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/naver/discovery-zookeeper"&gt;https://github.com/naver/discovery-zookeeper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;elasticsearch plugin to discovery hosts in cluster based on information in znode of Zookeeper&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;winstonjs
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/winstonjs/winston/pull/1559"&gt;https://github.com/winstonjs/winston/pull/1559&lt;/a&gt;: fix confusing log message&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="오픈소스-커뮤니케이션"&gt;오픈소스 커뮤니케이션&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/TeamNewPipe/NewPipe/issues/9710#issuecomment-3764631972"&gt;TeamNewPipe/NewPipe#9710&lt;/a&gt;: NewPipe Android audio ducking problem&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/iceberg/issues/10181#issuecomment-3568634698"&gt;apache/iceberg#10181&lt;/a&gt;: How to avoid partition key sorting when inserting data into a partitioned Iceberg table?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="번역"&gt;번역&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://rtd-hadoop-security.readthedocs.io/ko/latest/kerberos.html"&gt;The Kerberos Protocol And Its Implementations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="발표"&gt;발표&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;TossBank SLASH24: Building a Hadoop cluster with open source
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://toss.im/slash-24/sessions/5"&gt;https://toss.im/slash-24/sessions/5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=4BcSVF4bLtU"&gt;https://www.youtube.com/watch?v=4BcSVF4bLtU&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;NAVER DEVIEW 2021: 초대용량 멀티테넌트 시큐어 하둡 클러스터 성장통 경험기
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://deview.kr/2021/sessions/459"&gt;https://deview.kr/2021/sessions/459&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://deview.kr/data/deview/session/attach/10_%EC%B4%88%EB%8C%80%EC%9A%A9%EB%9F%89%20%EB%A9%80%ED%8B%B0%ED%85%8C%EB%84%8C%ED%8A%B8%20%EC%8B%9C%ED%81%90%EC%96%B4%20%ED%95%98%EB%91%A1%20%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%20%EC%84%B1%EC%9E%A5%ED%86%B5%20%EA%B2%BD%ED%97%98%EA%B8%B0.pdf"&gt;https://deview.kr/data/deview/session/attach/10_%EC%B4%88%EB%8C%80%EC%9A%A9%EB%9F%89%20%EB%A9%80%ED%8B%B0%ED%85%8C%EB%84%8C%ED%8A%B8%20%EC%8B%9C%ED%81%90%EC%96%B4%20%ED%95%98%EB%91%A1%20%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%20%EC%84%B1%EC%9E%A5%ED%86%B5%20%EA%B2%BD%ED%97%98%EA%B8%B0.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tv.naver.com/v/23650574"&gt;https://tv.naver.com/v/23650574&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;NAVER DEVIEW 2017: Advanced Experiences in Multi-tenant Hadoop Cluster Operation
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://deview.kr/2017/schedule/193?lang=en"&gt;https://deview.kr/2017/schedule/193?lang=en&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.slideshare.net/deview/234-80881396"&gt;https://www.slideshare.net/deview/234-80881396&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tv.naver.com/v/2297124"&gt;https://tv.naver.com/v/2297124&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;</description></item></channel></rss>
