@@ -1,6 +1,5 @@
 ---
-title: "Archive"
+title: "글모음"
 layout: "archives"
-url: "/archives"
 summary: "archives"
 ---
