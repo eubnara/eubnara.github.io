@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Mysql on EUB's second brain</title><link>https://eubnara.github.io/ko/tags/mysql/</link><description>Recent content in Mysql on EUB's second brain</description><generator>Hugo -- 0.162.1</generator><language>ko-kr</language><lastBuildDate>Thu, 12 Oct 2023 08:34:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/ko/tags/mysql/index.xml" rel="self" type="application/rss+xml"/><item><title>Checklist for hive metastore when using mysql</title><link>https://eubnara.github.io/ko/computer-science/hadoop/hivemetastore-mysql/</link><pubDate>Thu, 12 Oct 2023 08:34:00 +0900</pubDate><guid>https://eubnara.github.io/ko/computer-science/hadoop/hivemetastore-mysql/</guid><description>&lt;h1 id="mysql-index"&gt;MySQL Index&lt;/h1&gt;
+&lt;p&gt;There are some expensive operations for hive metastore when accessing or storing metadatas on RDBMS.&lt;br&gt;
+Here are some official hive patches for indexing.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;-- HIVE-21063
+CREATE UNIQUE INDEX `NOTIFICATION_LOG_EVENT_ID` ON NOTIFICATION_LOG (`EVENT_ID`) USING BTREE;
+-- HIVE-21487
+CREATE INDEX COMPLETED_COMPACTIONS_RES ON COMPLETED_COMPACTIONS (CC_DATABASE,CC_TABLE,CC_PARTITION);
+-- HIVE-27165
+DROP INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS;
+CREATE INDEX TAB_COL_STATS_IDX ON TAB_COL_STATS (DB_NAME, TABLE_NAME, COLUMN_NAME, CAT_NAME) USING BTREE;
+DROP INDEX PCS_STATS_IDX ON PART_COL_STATS;
+CREATE INDEX PCS_STATS_IDX ON PART_COL_STATS (DB_NAME,TABLE_NAME,COLUMN_NAME,PARTITION_NAME,CAT_NAME) USING BTREE;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When you upgrade your hive, there are some changes on tables in rdbms. You can find needed SQLs depending on version at &lt;a href="https://github.com/apache/hive/tree/master/standalone-metastore/metastore-server/src/main/sql/mysql"&gt;https://github.com/apache/hive/tree/master/standalone-metastore/metastore-server/src/main/sql/mysql&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
