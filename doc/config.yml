@@ -10,6 +10,9 @@ params:
   comments: true
   env: production
   social: true
+  mainSections:
+    - computer-science
+    - tools
 
 languages:
   en:
