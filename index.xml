@@ -158,6 +158,7 @@ I work as a Data Engineer.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h2 id="apache-ambari"&gt;Apache Ambari&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26614"&gt;AMBARI-26614&lt;/a&gt;: Config and config-group changes are slow to propagate to agents on large clusters&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26598"&gt;AMBARI-26598&lt;/a&gt;: Don&amp;rsquo;t execute dangerous metatool command when starting hiveserver2&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26555"&gt;AMBARI-26555&lt;/a&gt;: Password leaked for configurations at stack root (e.g. cluster-env.xml)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/AMBARI-26533"&gt;AMBARI-26533&lt;/a&gt;: Ranger Admin Restart Deletes JDBC JAR When Installed on Same Host as Ambari Server&lt;/li&gt;
