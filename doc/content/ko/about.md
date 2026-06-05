@@ -56,6 +56,7 @@ comments: false
 
 ## Apache Ambari
 
+- [AMBARI-26614](https://issues.apache.org/jira/browse/AMBARI-26614): Config and config-group changes are slow to propagate to agents on large clusters
 - [AMBARI-26598](https://issues.apache.org/jira/browse/AMBARI-26598): Don't execute dangerous metatool command when starting hiveserver2
 - [AMBARI-26555](https://issues.apache.org/jira/browse/AMBARI-26555): Password leaked for configurations at stack root (e.g. cluster-env.xml)
 - [AMBARI-26533](https://issues.apache.org/jira/browse/AMBARI-26533): Ranger Admin Restart Deletes JDBC JAR When Installed on Same Host as Ambari Server
