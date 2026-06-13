@@ -47,8 +47,8 @@ These permissions are used solely for the app's core functionality.
 
 ## 5. 문의 / Contact
 
-**이름 / Name:** Yubi Lee
-**이메일 / Email:** eubnara@gmail.com
+**이름 / Name:** EUB works
+**이메일 / Email:** eubworks@gmail.com
 
 ---
 
