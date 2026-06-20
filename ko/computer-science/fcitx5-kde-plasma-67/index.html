@@ -1,0 +1,103 @@
+<!doctype html><html lang=ko dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>KDE Plasma 6.7 업데이트 후 fcitx5 조합키 깨짐 해결 | EUB's second brain</title><meta name=keywords content="fcitx5,kde,kde-plasma,kwin,wayland,korean-input,troubleshooting"><meta name=description content="증상
+KDE Neon에서 pkcon update 후 Plasma 6.7 (KWin 6.7.0)으로 올라가면서:
+
+한글 입력 자체는 정상
+일부 앱에서 Shift/Ctrl 조합키가 동작하지 않음
+
+Shift + - → _ 안 됨
+Ctrl + a → 그냥 a로 입력
+하지만 Shift + ㅂ → ㅃ (쌍자음)은 정상
+
+
+fcitx5를 완전히 끄면 조합키 정상 → 입력기 문제 확인
+
+원인: 버전 불일치 (version skew)
+
+	
+			
+					구성 요소
+					버전
+					상태
+			
+	
+	
+			
+					apt fcitx5
+					5.1.7
+					너무 구버전
+			
+			
+					KWin
+					6.7.0
+					너무 신버전
+			
+	
+
+fcitx5는 키 입력을 두 가지 방식으로 처리한다:"><meta name=author content="map[name:eubnara]"><link rel=canonical href=https://eubnara.github.io/ko/computer-science/fcitx5-kde-plasma-67/><link crossorigin=anonymous href=/assets/css/stylesheet.aeb04085357f24835232aa89766467110fb6da019fa0a790d4d097b3949d7276.css integrity="sha256-rrBAhTV/JINSMqqJdmRnEQ+22gGfoKeQ1NCXs5SdcnY=" rel="preload stylesheet" as=style><link rel=icon href=https://eubnara.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://eubnara.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://eubnara.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://eubnara.github.io/apple-touch-icon.png><link rel=mask-icon href=https://eubnara.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://eubnara.github.io/computer-science/fcitx5-kde-plasma-67/><link rel=alternate hreflang=ko href=https://eubnara.github.io/ko/computer-science/fcitx5-kde-plasma-67/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5436088801258740" crossorigin=anonymous></script><meta property="og:url" content="https://eubnara.github.io/ko/computer-science/fcitx5-kde-plasma-67/"><meta property="og:site_name" content="EUB's second brain"><meta property="og:title" content="KDE Plasma 6.7 업데이트 후 fcitx5 조합키 깨짐 해결"><meta property="og:description" content="증상 KDE Neon에서 pkcon update 후 Plasma 6.7 (KWin 6.7.0)으로 올라가면서:
+한글 입력 자체는 정상 일부 앱에서 Shift/Ctrl 조합키가 동작하지 않음 Shift + - → _ 안 됨 Ctrl + a → 그냥 a로 입력 하지만 Shift + ㅂ → ㅃ (쌍자음)은 정상 fcitx5를 완전히 끄면 조합키 정상 → 입력기 문제 확인 원인: 버전 불일치 (version skew) 구성 요소 버전 상태 apt fcitx5 5.1.7 너무 구버전 KWin 6.7.0 너무 신버전 fcitx5는 키 입력을 두 가지 방식으로 처리한다:"><meta property="og:locale" content="ko-kr"><meta property="og:type" content="article"><meta property="article:section" content="computer-science"><meta property="article:published_time" content="2026-06-20T18:30:00+09:00"><meta property="article:modified_time" content="2026-06-20T18:30:00+09:00"><meta property="article:tag" content="Fcitx5"><meta property="article:tag" content="Kde"><meta property="article:tag" content="Kde-Plasma"><meta property="article:tag" content="Kwin"><meta property="article:tag" content="Wayland"><meta property="article:tag" content="Korean-Input"><meta name=twitter:card content="summary"><meta name=twitter:title content="KDE Plasma 6.7 업데이트 후 fcitx5 조합키 깨짐 해결"><meta name=twitter:description content="증상
+KDE Neon에서 pkcon update 후 Plasma 6.7 (KWin 6.7.0)으로 올라가면서:
+
+한글 입력 자체는 정상
+일부 앱에서 Shift/Ctrl 조합키가 동작하지 않음
+
+Shift + - → _ 안 됨
+Ctrl + a → 그냥 a로 입력
+하지만 Shift + ㅂ → ㅃ (쌍자음)은 정상
+
+
+fcitx5를 완전히 끄면 조합키 정상 → 입력기 문제 확인
+
+원인: 버전 불일치 (version skew)
+
+	
+			
+					구성 요소
+					버전
+					상태
+			
+	
+	
+			
+					apt fcitx5
+					5.1.7
+					너무 구버전
+			
+			
+					KWin
+					6.7.0
+					너무 신버전
+			
+	
+
+fcitx5는 키 입력을 두 가지 방식으로 처리한다:"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"컴퓨터 과학","item":"https://eubnara.github.io/ko/computer-science/"},{"@type":"ListItem","position":2,"name":"KDE Plasma 6.7 업데이트 후 fcitx5 조합키 깨짐 해결","item":"https://eubnara.github.io/ko/computer-science/fcitx5-kde-plasma-67/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"KDE Plasma 6.7 업데이트 후 fcitx5 조합키 깨짐 해결","name":"KDE Plasma 6.7 업데이트 후 fcitx5 조합키 깨짐 해결","description":"증상 KDE Neon에서 pkcon update 후 Plasma 6.7 (KWin 6.7.0)으로 올라가면서:\n한글 입력 자체는 정상 일부 앱에서 Shift/Ctrl 조합키가 동작하지 않음 Shift + - → _ 안 됨 Ctrl + a → 그냥 a로 입력 하지만 Shift + ㅂ → ㅃ (쌍자음)은 정상 fcitx5를 완전히 끄면 조합키 정상 → 입력기 문제 확인 원인: 버전 불일치 (version skew) 구성 요소 버전 상태 apt fcitx5 5.1.7 너무 구버전 KWin 6.7.0 너무 신버전 fcitx5는 키 입력을 두 가지 방식으로 처리한다:\n","keywords":["fcitx5","kde","kde-plasma","kwin","wayland","korean-input","troubleshooting"],"articleBody":"증상 KDE Neon에서 pkcon update 후 Plasma 6.7 (KWin 6.7.0)으로 올라가면서:\n한글 입력 자체는 정상 일부 앱에서 Shift/Ctrl 조합키가 동작하지 않음 Shift + - → _ 안 됨 Ctrl + a → 그냥 a로 입력 하지만 Shift + ㅂ → ㅃ (쌍자음)은 정상 fcitx5를 완전히 끄면 조합키 정상 → 입력기 문제 확인 원인: 버전 불일치 (version skew) 구성 요소 버전 상태 apt fcitx5 5.1.7 너무 구버전 KWin 6.7.0 너무 신버전 fcitx5는 키 입력을 두 가지 방식으로 처리한다:\n방식 예 경로 소비 (consume) 한글, Shift+ㅂ→ㅃ fcitx가 처리 → 정상 전달 (forward) _, Ctrl+a 등 fcitx가 KWin에 반환 → 깨짐 forward 시 fcitx는 modifier(Shift/Ctrl) 상태를 함께 전달해야 하는데, 5.1.7 + KWin 6.7.0 조합에서 modifier가 유실되었다. 이 문제는 fcitx 5.1.13부터 수정되었다.\n앱마다 증상이 달랐던 이유 fcitx는 앱과 3가지 경로로 통신한다:\n경로 방식 해당 앱 영향 ① D-Bus IM 모듈 네이티브 GTK/Qt가 frontend 공유 라이브러리 로드 konsole (Qt) ✅ 정상 ② Wayland input-method 컴포지터(KWin)가 중계 AppImage, Electron ❌ 깨짐 ③ XIM XWayland X11 앱 ✅ 정상 konsole: 경로 ① (D-Bus로 fcitx 데몬에 직접 접속, KWin 우회) → 정상 ghostty (AppImage): 자체 GTK에 fcitx 모듈 없음 → 경로 ②로 폴백 → KWin 버그 직격 → 조합키 깨짐 해결 방법 apt fcitx5(5.1.7)를 업그레이드할 수 없으므로, **flatpak으로 최신 fcitx5(5.1.19)**를 받아 데몬만 교체.\n1. flatpak fcitx5 + 한글 엔진 설치 flatpak install flathub org.fcitx.Fcitx5 flatpak install flathub org.fcitx.Fcitx5.Addon.Hangul 한글 엔진은 별도 extension — 본체에 포함되지 않음.\n2. 기존 설정 복사 mkdir -p ~/.var/app/org.fcitx.Fcitx5/config/fcitx5 cp -rf ~/.config/fcitx5/* ~/.var/app/org.fcitx.Fcitx5/config/fcitx5/ 3. host fcitx 중단, flatpak 자동시작 등록 pkill fcitx5 rm -f ~/.config/autostart/org.fcitx.Fcitx5.desktop cat \u003e ~/.config/autostart/fcitx5-flatpak.desktop \u003c\u003c'EOF' [Desktop Entry] Type=Application Name=Fcitx5 (Flatpak) Exec=flatpak run org.fcitx.Fcitx5 EOF 4. 환경변수 설정 ~/.config/environment.d/fcitx5.conf:\nGTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS=@im=fcitx 5. 재로그인 host fcitx5-frontend 패키지를 유지해야 하는 이유 flatpak fcitx5는 **데몬(엔진)**만 제공한다. 네이티브 host 앱(konsole 등)은 자신의 프로세스 안에 host용 IM 모듈(/usr/lib/.../fcitx5-frontend-*.so)을 로드해야 D-Bus로 데몬에 접속할 수 있다.\n[ flatpak fcitx5 5.1.19 데몬 ] ▲ ▲ ▲ │ D-Bus │ D-Bus │ Wayland [host frontend .so] [host frontend .so] [AppImage 자체 GTK] │ │ │ konsole 네이티브 앱 ghostty apt로 따로 설치해야 하는 패키지 (flatpak이 제공 불가):\nsudo apt install fcitx5-frontend-gtk3 fcitx5-frontend-gtk4 \\ fcitx5-frontend-qt5 fcitx5-frontend-qt6 주의: 이 패키지들은 auto-removable로 표시될 수 있다. 실수로 지워지는 것 방지:\nsudo apt-mark manual fcitx5-frontend-gtk3 fcitx5-frontend-gtk4 \\ fcitx5-frontend-qt5 fcitx5-frontend-qt6 언제 apt로 돌아갈 수 있나 apt의 fcitx5가 **5.1.13+**로 올라오면 복귀 가능:\nflatpak 자동시작 제거 host fcitx5 자동시작 복원 flatpak 데몬 제거 요약 구성 요소 설치 방법 비고 fcitx5 데몬 flatpak (5.1.19) apt보다 최신 한글 엔진 flatpak 별도 extension fcitx5-frontend-* apt 네이티브 앱에 필수 환경변수 / 자동시작 / 설정 수동 공식 문서에 없음 ","wordCount":"417","inLanguage":"ko","datePublished":"2026-06-20T18:30:00+09:00","dateModified":"2026-06-20T18:30:00+09:00","author":{"@type":"Person","name":{"name":"eubnara"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://eubnara.github.io/ko/computer-science/fcitx5-kde-plasma-67/"},"publisher":{"@type":"Organization","name":"EUB's second brain","logo":{"@type":"ImageObject","url":"https://eubnara.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://eubnara.github.io/ko/ accesskey=h title="EUB's second brain (Alt + H)">EUB's second brain</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><ul class=lang-switch><li>|</li><li><a href=https://eubnara.github.io/ title=English aria-label=English>En</a></li></ul></div></div><ul id=menu><li><a href=https://eubnara.github.io/ko/about title=About><span>About</span></a></li><li><a href=https://eubnara.github.io/ko/archive title=Archive><span>Archive</span></a></li><li><a href=https://eubnara.github.io/ko/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://eubnara.github.io/ko/categories/ title=categories><span>categories</span></a></li><li><a href=https://eubnara.github.io/ko/tags/ title=tags><span>tags</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://eubnara.github.io/ko/>홈</a>&nbsp;»&nbsp;<a href=https://eubnara.github.io/ko/computer-science/>컴퓨터 과학</a></div><h1 class="post-title entry-hint-parent">KDE Plasma 6.7 업데이트 후 fcitx5 조합키 깨짐 해결</h1><div class=post-meta><span title='2026-06-20 18:30:00 +0900 +0900'>6월 20, 2026</span>&nbsp;·&nbsp;map[name:eubnara]&nbsp;|&nbsp;번역:<ul class=i18n_list><li><a href=https://eubnara.github.io/computer-science/fcitx5-kde-plasma-67/>En</a></li></ul></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>목차</span></summary><div class=inner><ul><li><a href=#%ec%a6%9d%ec%83%81 aria-label=증상>증상</a></li><li><a href=#%ec%9b%90%ec%9d%b8-%eb%b2%84%ec%a0%84-%eb%b6%88%ec%9d%bc%ec%b9%98-version-skew aria-label="원인: 버전 불일치 (version skew)">원인: 버전 불일치 (version skew)</a><ul><li><a href=#%ec%95%b1%eb%a7%88%eb%8b%a4-%ec%a6%9d%ec%83%81%ec%9d%b4-%eb%8b%ac%eb%9e%90%eb%8d%98-%ec%9d%b4%ec%9c%a0 aria-label="앱마다 증상이 달랐던 이유">앱마다 증상이 달랐던 이유</a></li></ul></li><li><a href=#%ed%95%b4%ea%b2%b0-%eb%b0%a9%eb%b2%95 aria-label="해결 방법">해결 방법</a><ul><li><a href=#1-flatpak-fcitx5--%ed%95%9c%ea%b8%80-%ec%97%94%ec%a7%84-%ec%84%a4%ec%b9%98 aria-label="1. flatpak fcitx5 + 한글 엔진 설치">1. flatpak fcitx5 + 한글 엔진 설치</a></li><li><a href=#2-%ea%b8%b0%ec%a1%b4-%ec%84%a4%ec%a0%95-%eb%b3%b5%ec%82%ac aria-label="2. 기존 설정 복사">2. 기존 설정 복사</a></li><li><a href=#3-host-fcitx-%ec%a4%91%eb%8b%a8-flatpak-%ec%9e%90%eb%8f%99%ec%8b%9c%ec%9e%91-%eb%93%b1%eb%a1%9d aria-label="3. host fcitx 중단, flatpak 자동시작 등록">3. host fcitx 중단, flatpak 자동시작 등록</a></li><li><a href=#4-%ed%99%98%ea%b2%bd%eb%b3%80%ec%88%98-%ec%84%a4%ec%a0%95 aria-label="4. 환경변수 설정">4. 환경변수 설정</a></li><li><a href=#5-%ec%9e%ac%eb%a1%9c%ea%b7%b8%ec%9d%b8 aria-label="5. 재로그인">5. 재로그인</a></li></ul></li><li><a href=#host-fcitx5-frontend-%ed%8c%a8%ed%82%a4%ec%a7%80%eb%a5%bc-%ec%9c%a0%ec%a7%80%ed%95%b4%ec%95%bc-%ed%95%98%eb%8a%94-%ec%9d%b4%ec%9c%a0 aria-label="host fcitx5-frontend 패키지를 유지해야 하는 이유">host fcitx5-frontend 패키지를 유지해야 하는 이유</a></li><li><a href=#%ec%96%b8%ec%a0%9c-apt%eb%a1%9c-%eb%8f%8c%ec%95%84%ea%b0%88-%ec%88%98-%ec%9e%88%eb%82%98 aria-label="언제 apt로 돌아갈 수 있나">언제 apt로 돌아갈 수 있나</a></li><li><a href=#%ec%9a%94%ec%95%bd aria-label=요약>요약</a></li></ul></div></details></div><div class=post-content><h2 id=증상>증상<a hidden class=anchor aria-hidden=true href=#증상>#</a></h2><p>KDE Neon에서 <code>pkcon update</code> 후 Plasma 6.7 (KWin 6.7.0)으로 올라가면서:</p><ul><li>한글 입력 자체는 정상</li><li>일부 앱에서 Shift/Ctrl 조합키가 동작하지 않음<ul><li><code>Shift + -</code> → <code>_</code> 안 됨</li><li><code>Ctrl + a</code> → 그냥 <code>a</code>로 입력</li><li>하지만 <code>Shift + ㅂ → ㅃ</code> (쌍자음)은 정상</li></ul></li><li>fcitx5를 완전히 끄면 조합키 정상 → 입력기 문제 확인</li></ul><h2 id=원인-버전-불일치-version-skew>원인: 버전 불일치 (version skew)<a hidden class=anchor aria-hidden=true href=#원인-버전-불일치-version-skew>#</a></h2><table><thead><tr><th>구성 요소</th><th>버전</th><th>상태</th></tr></thead><tbody><tr><td>apt fcitx5</td><td>5.1.7</td><td>너무 구버전</td></tr><tr><td>KWin</td><td>6.7.0</td><td>너무 신버전</td></tr></tbody></table><p>fcitx5는 키 입력을 두 가지 방식으로 처리한다:</p><table><thead><tr><th>방식</th><th>예</th><th>경로</th></tr></thead><tbody><tr><td>소비 (consume)</td><td>한글, Shift+ㅂ→ㅃ</td><td>fcitx가 처리 → 정상</td></tr><tr><td>전달 (forward)</td><td><code>_</code>, <code>Ctrl+a</code> 등</td><td>fcitx가 KWin에 반환 → <strong>깨짐</strong></td></tr></tbody></table><p>forward 시 fcitx는 modifier(Shift/Ctrl) 상태를 함께 전달해야 하는데, <strong>5.1.7 + KWin 6.7.0 조합에서 modifier가 유실되었다.</strong> 이 문제는 <strong>fcitx 5.1.13부터 수정</strong>되었다.</p><h3 id=앱마다-증상이-달랐던-이유>앱마다 증상이 달랐던 이유<a hidden class=anchor aria-hidden=true href=#앱마다-증상이-달랐던-이유>#</a></h3><p>fcitx는 앱과 3가지 경로로 통신한다:</p><table><thead><tr><th>경로</th><th>방식</th><th>해당 앱</th><th>영향</th></tr></thead><tbody><tr><td>① D-Bus IM 모듈</td><td>네이티브 GTK/Qt가 frontend 공유 라이브러리 로드</td><td>konsole (Qt)</td><td>✅ 정상</td></tr><tr><td>② Wayland input-method</td><td>컴포지터(KWin)가 중계</td><td>AppImage, Electron</td><td>❌ 깨짐</td></tr><tr><td>③ XIM</td><td>XWayland</td><td>X11 앱</td><td>✅ 정상</td></tr></tbody></table><ul><li><strong>konsole</strong>: 경로 ① (D-Bus로 fcitx 데몬에 직접 접속, KWin 우회) → <strong>정상</strong></li><li><strong>ghostty</strong> (AppImage): 자체 GTK에 fcitx 모듈 없음 → 경로 ②로 폴백 → <strong>KWin 버그 직격</strong> → 조합키 깨짐</li></ul><h2 id=해결-방법>해결 방법<a hidden class=anchor aria-hidden=true href=#해결-방법>#</a></h2><p>apt fcitx5(5.1.7)를 업그레이드할 수 없으므로, **flatpak으로 최신 fcitx5(5.1.19)**를 받아 데몬만 교체.</p><h3 id=1-flatpak-fcitx5--한글-엔진-설치>1. flatpak fcitx5 + 한글 엔진 설치<a hidden class=anchor aria-hidden=true href=#1-flatpak-fcitx5--한글-엔진-설치>#</a></h3><pre tabindex=0><code>flatpak install flathub org.fcitx.Fcitx5
+flatpak install flathub org.fcitx.Fcitx5.Addon.Hangul
+</code></pre><p>한글 엔진은 <strong>별도 extension</strong> — 본체에 포함되지 않음.</p><h3 id=2-기존-설정-복사>2. 기존 설정 복사<a hidden class=anchor aria-hidden=true href=#2-기존-설정-복사>#</a></h3><pre tabindex=0><code>mkdir -p ~/.var/app/org.fcitx.Fcitx5/config/fcitx5
+cp -rf ~/.config/fcitx5/* ~/.var/app/org.fcitx.Fcitx5/config/fcitx5/
+</code></pre><h3 id=3-host-fcitx-중단-flatpak-자동시작-등록>3. host fcitx 중단, flatpak 자동시작 등록<a hidden class=anchor aria-hidden=true href=#3-host-fcitx-중단-flatpak-자동시작-등록>#</a></h3><pre tabindex=0><code>pkill fcitx5
+rm -f ~/.config/autostart/org.fcitx.Fcitx5.desktop
+</code></pre><pre tabindex=0><code>cat &gt; ~/.config/autostart/fcitx5-flatpak.desktop &lt;&lt;&#39;EOF&#39;
+[Desktop Entry]
+Type=Application
+Name=Fcitx5 (Flatpak)
+Exec=flatpak run org.fcitx.Fcitx5
+EOF
+</code></pre><h3 id=4-환경변수-설정>4. 환경변수 설정<a hidden class=anchor aria-hidden=true href=#4-환경변수-설정>#</a></h3><p><code>~/.config/environment.d/fcitx5.conf</code>:</p><pre tabindex=0><code>GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+</code></pre><h3 id=5-재로그인>5. 재로그인<a hidden class=anchor aria-hidden=true href=#5-재로그인>#</a></h3><h2 id=host-fcitx5-frontend-패키지를-유지해야-하는-이유>host fcitx5-frontend 패키지를 유지해야 하는 이유<a hidden class=anchor aria-hidden=true href=#host-fcitx5-frontend-패키지를-유지해야-하는-이유>#</a></h2><p>flatpak fcitx5는 **데몬(엔진)**만 제공한다. 네이티브 host 앱(konsole 등)은 자신의 프로세스 안에 <strong>host용 IM 모듈</strong>(<code>/usr/lib/.../fcitx5-frontend-*.so</code>)을 로드해야 D-Bus로 데몬에 접속할 수 있다.</p><pre tabindex=0><code>[ flatpak fcitx5 5.1.19 데몬 ]
+  ▲                   ▲                    ▲
+  │ D-Bus             │ D-Bus              │ Wayland
+[host frontend .so]  [host frontend .so]  [AppImage 자체 GTK]
+  │                   │                    │
+konsole              네이티브 앱           ghostty
+</code></pre><p>apt로 따로 설치해야 하는 패키지 (flatpak이 제공 불가):</p><pre tabindex=0><code>sudo apt install fcitx5-frontend-gtk3 fcitx5-frontend-gtk4 \
+                 fcitx5-frontend-qt5 fcitx5-frontend-qt6
+</code></pre><p><strong>주의</strong>: 이 패키지들은 <code>auto-removable</code>로 표시될 수 있다. 실수로 지워지는 것 방지:</p><pre tabindex=0><code>sudo apt-mark manual fcitx5-frontend-gtk3 fcitx5-frontend-gtk4 \
+                     fcitx5-frontend-qt5 fcitx5-frontend-qt6
+</code></pre><h2 id=언제-apt로-돌아갈-수-있나>언제 apt로 돌아갈 수 있나<a hidden class=anchor aria-hidden=true href=#언제-apt로-돌아갈-수-있나>#</a></h2><p>apt의 fcitx5가 **5.1.13+**로 올라오면 복귀 가능:</p><ol><li>flatpak 자동시작 제거</li><li>host fcitx5 자동시작 복원</li><li>flatpak 데몬 제거</li></ol><h2 id=요약>요약<a hidden class=anchor aria-hidden=true href=#요약>#</a></h2><table><thead><tr><th>구성 요소</th><th>설치 방법</th><th>비고</th></tr></thead><tbody><tr><td>fcitx5 데몬</td><td>flatpak (5.1.19)</td><td>apt보다 최신</td></tr><tr><td>한글 엔진</td><td>flatpak</td><td>별도 extension</td></tr><tr><td>fcitx5-frontend-*</td><td>apt</td><td>네이티브 앱에 필수</td></tr><tr><td>환경변수 / 자동시작 / 설정</td><td>수동</td><td>공식 문서에 없음</td></tr></tbody></table></div><footer class=post-footer><ul class=post-tags><li><a href=https://eubnara.github.io/ko/tags/fcitx5/>Fcitx5</a></li><li><a href=https://eubnara.github.io/ko/tags/kde/>Kde</a></li><li><a href=https://eubnara.github.io/ko/tags/kde-plasma/>Kde-Plasma</a></li><li><a href=https://eubnara.github.io/ko/tags/kwin/>Kwin</a></li><li><a href=https://eubnara.github.io/ko/tags/wayland/>Wayland</a></li><li><a href=https://eubnara.github.io/ko/tags/korean-input/>Korean-Input</a></li><li><a href=https://eubnara.github.io/ko/tags/troubleshooting/>Troubleshooting</a></li></ul></footer><script src=https://utteranc.es/client.js repo=eubnara/eubnara.github.io issue-term=pathname theme=preferred-color-scheme crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://eubnara.github.io/ko/>EUB's second brain</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

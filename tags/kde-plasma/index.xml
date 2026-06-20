@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Kde-Plasma on EUB's second brain</title><link>https://eubnara.github.io/tags/kde-plasma/</link><description>Recent content in Kde-Plasma on EUB's second brain</description><generator>Hugo -- 0.163.3</generator><language>en-us</language><lastBuildDate>Sat, 20 Jun 2026 18:30:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/tags/kde-plasma/index.xml" rel="self" type="application/rss+xml"/><item><title>Fcitx5 modifier keys broken after KDE Plasma 6.7 upgrade</title><link>https://eubnara.github.io/computer-science/fcitx5-kde-plasma-67/</link><pubDate>Sat, 20 Jun 2026 18:30:00 +0900</pubDate><guid>https://eubnara.github.io/computer-science/fcitx5-kde-plasma-67/</guid><description>&lt;h2 id="symptom"&gt;Symptom&lt;/h2&gt;
+&lt;p&gt;After &lt;code&gt;pkcon update&lt;/code&gt; on KDE Neon (Plasma 6.7, KWin 6.7.0):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Korean input works&lt;/li&gt;
+&lt;li&gt;Shift/Ctrl modifier keys break in some apps
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Shift + -&lt;/code&gt; does not produce &lt;code&gt;_&lt;/code&gt; (underscore)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + a&lt;/code&gt; acts as plain &lt;code&gt;a&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;But &lt;code&gt;Shift + ㅂ → ㅃ&lt;/code&gt; (double consonant) works fine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Disabling fcitx5 fixes modifier keys → input method is the culprit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="root-cause-version-skew"&gt;Root cause: version skew&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Component&lt;/th&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th&gt;Status&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;apt fcitx5&lt;/td&gt;
+&lt;td&gt;5.1.7&lt;/td&gt;
+&lt;td&gt;Too old&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;KWin&lt;/td&gt;
+&lt;td&gt;6.7.0&lt;/td&gt;
+&lt;td&gt;Too new&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Fcitx processes keys in two ways:&lt;/p&gt;</description></item></channel></rss>
