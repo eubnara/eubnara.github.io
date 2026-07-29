@@ -97,6 +97,7 @@ I work as a Data Engineer.
 
 ## Apache Impala
 
+- [IMPALA-15229](https://issues.apache.org/jira/browse/IMPALA-15229): SHOW TABLE STATS / SHOW PARTITIONS / SHOW FILES issue one NameNode RPC perpartition/file for the display-only EC Policy column
 - [IMPALA-13413](https://issues.apache.org/jira/browse/IMPALA-13413): num_cores flag does not work.
   - https://gerrit.cloudera.org/#/c/23333/
 - [IMPALA-13696](https://issues.apache.org/jira/browse/IMPALA-13696): Exclude conflicting JAX-RS libraries
@@ -123,7 +124,6 @@ I work as a Data Engineer.
 
 - [ZEPPELIN-6396](https://issues.apache.org/jira/browse/ZEPPELIN-6396): Separate restart all interpreters into a dedicated endpoint
 - [ZEPPELIN-5594](https://issues.apache.org/jira/browse/ZEPPELIN-5594): HDFS file id should be read as "long", not "int".
-
 
 ## Apache Avro
 
