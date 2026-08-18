@@ -18,6 +18,8 @@ comments: false
 
 ## Hadoop
 
+- [HDFS-17965](https://issues.apache.org/jira/browse/HDFS-17965): DFSInputStream.close() leaks the block reader socket when the DFSClient is already closed
+- [YARN-11856](https://issues.apache.org/jira/browse/YARN-11856): DOWNLOADING resources unlock and cleanup is interrupted when killing a container that is localizing
 - [HDFS-17912](https://issues.apache.org/jira/browse/HDFS-17912): HttpFS: hadoop-httpfs.sh ignores HTTPFS_CONFIG when locating httpfs-env.sh
 - [HDFS-17883](https://issues.apache.org/jira/browse/HDFS-17883): dfs.net.topology.impl should be respected when dfs.use.dfs.network.topology=true
 - [HDFS-17877](https://issues.apache.org/jira/browse/HDFS-17877): DatanodeID.updateRegInfo() does not update hostNameBytes causing stale hostname on client
