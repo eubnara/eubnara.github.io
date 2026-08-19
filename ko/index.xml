@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>EUB's second brain</title><link>https://eubnara.github.io/ko/</link><description>Recent content on EUB's second brain</description><generator>Hugo -- 0.164.0</generator><language>ko-kr</language><lastBuildDate>Sat, 20 Jun 2026 18:30:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/ko/index.xml" rel="self" type="application/rss+xml"/><item><title>KDE Plasma 6.7 업데이트 후 fcitx5 조합키 깨짐 해결</title><link>https://eubnara.github.io/ko/computer-science/fcitx5-kde-plasma-67/</link><pubDate>Sat, 20 Jun 2026 18:30:00 +0900</pubDate><guid>https://eubnara.github.io/ko/computer-science/fcitx5-kde-plasma-67/</guid><description>&lt;h2 id="증상"&gt;증상&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>EUB's second brain</title><link>https://eubnara.github.io/ko/</link><description>Recent content on EUB's second brain</description><generator>Hugo -- 0.165.0</generator><language>ko-kr</language><lastBuildDate>Sat, 20 Jun 2026 18:30:00 +0900</lastBuildDate><atom:link href="https://eubnara.github.io/ko/index.xml" rel="self" type="application/rss+xml"/><item><title>KDE Plasma 6.7 업데이트 후 fcitx5 조합키 깨짐 해결</title><link>https://eubnara.github.io/ko/computer-science/fcitx5-kde-plasma-67/</link><pubDate>Sat, 20 Jun 2026 18:30:00 +0900</pubDate><guid>https://eubnara.github.io/ko/computer-science/fcitx5-kde-plasma-67/</guid><description>&lt;h2 id="증상"&gt;증상&lt;/h2&gt;
 &lt;p&gt;KDE Neon에서 &lt;code&gt;pkcon update&lt;/code&gt; 후 Plasma 6.7 (KWin 6.7.0)으로 올라가면서:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;한글 입력 자체는 정상&lt;/li&gt;
@@ -206,6 +206,8 @@ ipc.8020.backoff.enable
 &lt;h1 id="오픈소스-기여"&gt;오픈소스 기여&lt;/h1&gt;
 &lt;h2 id="hadoop"&gt;Hadoop&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-17965"&gt;HDFS-17965&lt;/a&gt;: DFSInputStream.close() leaks the block reader socket when the DFSClient is already closed&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/YARN-11856"&gt;YARN-11856&lt;/a&gt;: DOWNLOADING resources unlock and cleanup is interrupted when killing a container that is localizing&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-17912"&gt;HDFS-17912&lt;/a&gt;: HttpFS: hadoop-httpfs.sh ignores HTTPFS_CONFIG when locating httpfs-env.sh&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-17883"&gt;HDFS-17883&lt;/a&gt;: dfs.net.topology.impl should be respected when dfs.use.dfs.network.topology=true&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-17877"&gt;HDFS-17877&lt;/a&gt;: DatanodeID.updateRegInfo() does not update hostNameBytes causing stale hostname on client&lt;/li&gt;
