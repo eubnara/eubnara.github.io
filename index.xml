@@ -190,6 +190,7 @@ I work as a Data Engineer.&lt;/p&gt;
 &lt;h1 id="open-source-contribution"&gt;Open source contribution&lt;/h1&gt;
 &lt;h2 id="hadoop"&gt;Hadoop&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/YARN-11987"&gt;YARN-11987&lt;/a&gt;: container-executor delete-as-user fails to rmdir private filecache directories (rmdir is only attempted as the NM user)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-17965"&gt;HDFS-17965&lt;/a&gt;: DFSInputStream.close() leaks the block reader socket when the DFSClient is already closed&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/YARN-11856"&gt;YARN-11856&lt;/a&gt;: DOWNLOADING resources unlock and cleanup is interrupted when killing a container that is localizing&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/HDFS-17912"&gt;HDFS-17912&lt;/a&gt;: HttpFS: hadoop-httpfs.sh ignores HTTPFS_CONFIG when locating httpfs-env.sh&lt;/li&gt;
