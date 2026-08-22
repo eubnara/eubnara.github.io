@@ -18,6 +18,7 @@ comments: false
 
 ## Hadoop
 
+- [YARN-11987](https://issues.apache.org/jira/browse/YARN-11987): container-executor delete-as-user fails to rmdir private filecache directories (rmdir is only attempted as the NM user)
 - [HDFS-17965](https://issues.apache.org/jira/browse/HDFS-17965): DFSInputStream.close() leaks the block reader socket when the DFSClient is already closed
 - [YARN-11856](https://issues.apache.org/jira/browse/YARN-11856): DOWNLOADING resources unlock and cleanup is interrupted when killing a container that is localizing
 - [HDFS-17912](https://issues.apache.org/jira/browse/HDFS-17912): HttpFS: hadoop-httpfs.sh ignores HTTPFS_CONFIG when locating httpfs-env.sh
