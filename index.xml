@@ -331,6 +331,14 @@ I work as a Data Engineer.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/krb5/krb5/pull/1467"&gt;https://github.com/krb5/krb5/pull/1467&lt;/a&gt;: fix to rename FILE credential cache on windows&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id="starrocks"&gt;StarRocks&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/StarRocks/starrocks/issues/78863"&gt;StarRocks/starrocks#78863&lt;/a&gt;: HDFSWritableFile always calls hdfsHSync() on close; INSERT into Hive/Iceberg fails when a DataNode disk is busy
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/StarRocks/starrocks/pull/78864"&gt;StarRocks/starrocks#78864&lt;/a&gt;: [BugFix] Do not hsync HDFS files on close&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="etc"&gt;ETC&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;ansible
