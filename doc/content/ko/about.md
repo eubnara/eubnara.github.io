@@ -135,6 +135,11 @@ comments: false
 
 - https://github.com/krb5/krb5/pull/1467: fix to rename FILE credential cache on windows
 
+## StarRocks
+
+- [StarRocks/starrocks#78863](https://github.com/StarRocks/starrocks/issues/78863): HDFSWritableFile always calls hdfsHSync() on close; INSERT into Hive/Iceberg fails when a DataNode disk is busy
+  - [StarRocks/starrocks#78864](https://github.com/StarRocks/starrocks/pull/78864): [BugFix] Do not hsync HDFS files on close
+
 ## ETC
 
 - ansible
