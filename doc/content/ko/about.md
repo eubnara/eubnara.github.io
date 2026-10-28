@@ -59,6 +59,8 @@ comments: false
 
 ## Apache Ambari
 
+- [AMBARI-26670](https://issues.apache.org/jira/browse/AMBARI-26670): Ambari Web React: saving a config group fails when another service has a config group with the same name
+- [AMBARI-26669](https://issues.apache.org/jira/browse/AMBARI-26669): Saving a non-default config group overwrites a config group of a dependent service
 - [AMBARI-26614](https://issues.apache.org/jira/browse/AMBARI-26614): Config and config-group changes are slow to propagate to agents on large clusters
 - [AMBARI-26598](https://issues.apache.org/jira/browse/AMBARI-26598): Don't execute dangerous metatool command when starting hiveserver2
 - [AMBARI-26555](https://issues.apache.org/jira/browse/AMBARI-26555): Password leaked for configurations at stack root (e.g. cluster-env.xml)
