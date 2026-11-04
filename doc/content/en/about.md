@@ -102,6 +102,8 @@ I work as a Data Engineer.
 
 ## Apache Impala
 
+- [IMPALA-15737](https://issues.apache.org/jira/browse/IMPALA-15737): Cancelled hash join fragments keep running until the probe batch is fully processed
+  - https://gerrit.cloudera.org/#/c/25287/
 - [IMPALA-15229](https://issues.apache.org/jira/browse/IMPALA-15229): SHOW TABLE STATS / SHOW PARTITIONS / SHOW FILES issue one NameNode RPC perpartition/file for the display-only EC Policy column
 - [IMPALA-13413](https://issues.apache.org/jira/browse/IMPALA-13413): num_cores flag does not work.
   - https://gerrit.cloudera.org/#/c/23333/
