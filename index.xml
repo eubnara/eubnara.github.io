@@ -282,6 +282,11 @@ I work as a Data Engineer.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h2 id="apache-impala"&gt;Apache Impala&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-15737"&gt;IMPALA-15737&lt;/a&gt;: Cancelled hash join fragments keep running until the probe batch is fully processed
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gerrit.cloudera.org/#/c/25287/"&gt;https://gerrit.cloudera.org/#/c/25287/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-15229"&gt;IMPALA-15229&lt;/a&gt;: SHOW TABLE STATS / SHOW PARTITIONS / SHOW FILES issue one NameNode RPC perpartition/file for the display-only EC Policy column&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/IMPALA-13413"&gt;IMPALA-13413&lt;/a&gt;: num_cores flag does not work.
 &lt;ul&gt;
